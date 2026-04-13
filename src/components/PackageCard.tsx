@@ -38,11 +38,11 @@ function PackageCard({ title, nights, days, priceFrom, imageUrl, slug }: Package
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-between py-12 px-8 text-center">
 
           {/* Top Label */}
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-none inline-block border border-white/20"
+              className="px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full inline-block border border-white/20"
             >
               <p className="text-[10px] font-bold tracking-[0.4em] text-white/90 uppercase">
                 Curated Experience
@@ -53,7 +53,7 @@ function PackageCard({ title, nights, days, priceFrom, imageUrl, slug }: Package
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-2 transition-all duration-500 group-hover:scale-105"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter mb-2 transition-all duration-500 group-hover:scale-105"
               >
                 {title.split(' (')[0]}
               </motion.h3>
@@ -61,20 +61,20 @@ function PackageCard({ title, nights, days, priceFrom, imageUrl, slug }: Package
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="flex items-center gap-2 text-white/70 text-sm font-medium tracking-wide"
+                className="flex items-center gap-2 text-white/70 text-xs sm:text-sm font-medium tracking-wide"
               >
                 <span>{nights}N / {days}D</span>
-                <span className="w-1 h-1 rounded-full bg-amber-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                 <span>Luxury Stay</span>
               </motion.div>
             </div>
           </div>
 
           {/* Bottom Info & CTA */}
-          <div className="flex flex-col items-center w-full translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+          <div className="flex flex-col items-center w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
             <div className="mb-4">
               <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Pricing Starts At</p>
-              <p className="text-4xl font-bold text-white tracking-tight">
+              <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 ₹{priceFrom.toLocaleString()}
               </p>
             </div>

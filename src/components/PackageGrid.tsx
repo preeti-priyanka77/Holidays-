@@ -39,9 +39,7 @@ function PackageSlider({ title, packages, destinations }: { title: string, packa
             </h2>
             <div className="w-16 h-1.5 bg-amber-500 mt-4 rounded-none" />
           </div>
-          <p className="text-gray-400 font-medium tracking-wide text-sm md:text-base max-w-sm">
-            Handpicked premium experiences curated just for you.
-          </p>
+         
         </motion.div>
 
         <div className="relative w-full">
@@ -156,7 +154,7 @@ function PackageGrid() {
         <div className="space-y-0">
           {internationalPackages.length > 0 && (
             <PackageSlider
-              title="Global Escapes"
+              title="Journeys across the world, redefined."
               packages={internationalPackages}
               destinations={destinations}
             />
@@ -164,7 +162,7 @@ function PackageGrid() {
 
           {indiaPackages.length > 0 && (
             <PackageSlider
-              title="Incredible India"
+              title="Experience the finest journeys across India"
               packages={indiaPackages}
               destinations={destinations}
             />

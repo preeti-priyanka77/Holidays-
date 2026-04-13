@@ -33,17 +33,16 @@ function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-xs md:text-sm font-bold tracking-[0.4em] text-white/60 uppercase mb-4"
-          >
-            READY FOR YOUR NEXT JOURNEY?
+          >Planning your next getaway?
           </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-10 leading-tight"
+            className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-10 leading-tight"
           >
-            Let’s Create Something Unforgettable
+            Discover curated holiday experiences tailored for you
           </motion.h2>
 
           <motion.button
@@ -61,7 +60,7 @@ function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
             {/* Phone Card */}
             <motion.a
-              href="tel:83050-89097"
+              href="tel:+91 9777906587 "
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               animate={{ y: [0, -5, 0] }}
@@ -76,12 +75,12 @@ function Footer() {
               <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
                 <Phone className="w-5 h-5 text-white" />
               </div>
-              <span className="text-white font-medium tracking-wide">83050-89097</span>
+              <span className="text-white font-medium tracking-wide">+91 9777906587 </span>
             </motion.a>
 
             {/* Email Card */}
             <motion.a
-              href="mailto:packages@checkin.vacations"
+              href="mailto:eleqtholidays@gmail.com"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               animate={{ y: [0, 5, 0] }}
@@ -91,12 +90,12 @@ function Footer() {
                 y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" }
               }}
               whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.15)", filter: "brightness(1.2)" }}
-              className="flex items-center gap-4 p-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl transition-all duration-300"
+              className="flex items-center gap-4 p-4 md:p-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl transition-all duration-300"
             >
-              <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
+              <div className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full shrink-0">
                 <Mail className="w-5 h-5 text-white" />
               </div>
-              <span className="text-white font-medium tracking-wide break-all text-sm md:text-base">packages@checkin.vacations</span>
+              <span className="text-white font-medium tracking-wide break-all text-xs md:text-base">eleqtholidays@gmail.com</span>
             </motion.a>
           </div>
         </div>
@@ -115,8 +114,8 @@ function Footer() {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold tracking-tight">Eleqt Holidays & Leisure</h3>
-              <p className="text-sm text-white/50 leading-relaxed font-light tracking-wide max-w-[240px]">
-                Crafting experiences beyond travel
+              <p className="text-sm text-white/50 leading-relaxed font-light tracking-wide max-w-[380px]">
+                Corporate Office: 11th Floor, Tower-A, Odisha Startup Incubation Centre (O-Hub), SEZ Road, Infocity, Chandaka Industrial Estate, Patia, Bhubaneswar, Odisha, 751024, India
               </p>
             </motion.div>
 
@@ -131,7 +130,7 @@ function Footer() {
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 list-none">
                 {[
                   { name: 'About', path: '/about' },
-                  { name: 'Packages', path: '/' },
+
                   { name: 'Privacy Policy', path: '/privacy-policy' },
                   { name: 'Terms of Use', path: '/terms-of-use' },
                   { name: 'Guest Policy', path: '/guest-policy' },
@@ -177,7 +176,7 @@ function Footer() {
           {/* BOTTOM STRIP */}
           <div className="mt-20 pt-8 border-t border-white/5 text-center">
             <p className="text-[10px] md:text-xs text-white/30 tracking-[0.3em] uppercase">
-              © {currentYear} ELEQT HOLIDAYS & LEISURE. ALL RIGHTS RESERVED.
+              2025-2026 © Eleqt Holidays & Leisure | Psynuxsoftware Pvt Ltd. All Rights Reserved.
             </p>
           </div>
         </div>

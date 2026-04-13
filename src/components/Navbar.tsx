@@ -39,14 +39,14 @@ function Navbar() {
         {/* Right: Contact & Support */}
         <div className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6 px-4 py-2 bg-gray-50 border border-gray-100 rounded-none">
-            <a href="tel:83050-89097" className="flex items-center gap-2 text-gray-700 hover:text-amber-600 transition-colors">
+            <a href="tel:+91 9777906587" className="flex items-center gap-2 text-gray-700 hover:text-amber-600 transition-colors">
               <Phone size={14} className="text-amber-600" />
-              <span className="text-xs font-bold tracking-wider">83050-89097</span>
+              <span className="text-xs font-bold tracking-wider">+91 9777906587 </span>
             </a>
             <div className="w-px h-4 bg-gray-200" />
             <a href="mailto:packages@checkin.vacations" className="flex items-center gap-2 text-gray-700 hover:text-amber-600 transition-colors">
               <Mail size={14} className="text-amber-600" />
-              <span className="text-xs font-bold tracking-wider">packages@checkin.vacations</span>
+              <span className="text-xs font-bold tracking-wider">eleqtholidays@gmail.com</span>
             </a>
           </div>
 
@@ -67,46 +67,71 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 right-0 w-[320px] bg-white shadow-2xl z-50 p-8 flex flex-col rounded-none"
-          >
-            <div className="px-6 py-10 flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                <a href="tel:9218114966" className="flex items-center gap-4 p-4 bg-gray-50 rounded-none">
-                  <div className="w-10 h-10 bg-[#916a3b]/10 flex items-center justify-center text-[#916a3b]">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Call Us</p>
-                    <p className="font-bold text-gray-900 italic">92181-14966</p>
-                  </div>
-                </a>
-                <a href="mailto:packages@checkin.vacations" className="flex items-center gap-4 p-4 bg-gray-50 rounded-none">
-                  <div className="w-10 h-10 bg-[#916a3b]/10 flex items-center justify-center text-[#916a3b]">
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Email Us</p>
-                    <p className="font-bold text-gray-900">packages@checkin.vacations</p>
-                  </div>
-                </a>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-md z-[110]"
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 right-0 w-full max-w-[320px] bg-white shadow-2xl z-[120] p-8 flex flex-col"
+            >
+              <div className="flex justify-end mb-8">
+                <button
+                  className="p-2 text-gray-900 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <X size={24} />
+                </button>
               </div>
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="w-full bg-[#916a3b] text-white text-center font-bold uppercase tracking-[0.2em] py-5 rounded-none shadow-lg"
-              >
-                Plan My Trip
-              </Link>
-            </div>
-          </motion.div>
+
+              <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
+                  <a href="tel:8305089097" className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                    <div className="w-10 h-10 bg-[#916a3b]/10 flex items-center justify-center text-[#916a3b] rounded-full">
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Call Us</p>
+                      <p className="font-bold text-gray-900">+91 9777906587</p>
+                    </div>
+                  </a>
+                  <a href="mailto:eleqtholidays@gmail.com" className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                    <div className="w-10 h-10 bg-[#916a3b]/10 flex items-center justify-center text-[#916a3b] rounded-full">
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Email Us</p>
+                      <p className="font-[600] text-gray-900 text-[13px] break-all">eleqtholidays@gmail.com</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <Link to="/" className="text-lg font-bold text-gray-900 hover:text-[#916a3b] transition-colors">Home</Link>
+                  <Link to="/about" className="text-lg font-bold text-gray-900 hover:text-[#916a3b] transition-colors">About Us</Link>
+                  <Link to="/contact" className="text-lg font-bold text-gray-900 hover:text-[#916a3b] transition-colors">Packages</Link>
+                </div>
+
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full bg-[#916a3b] text-white text-center font-bold uppercase tracking-[0.2em] py-5 mt-4 rounded-lg shadow-lg"
+                >
+                  Plan My Trip
+                </Link>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

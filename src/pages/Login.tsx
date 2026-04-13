@@ -26,7 +26,7 @@ function Login() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-[440px] bg-white/70 backdrop-blur-xl border border-white p-10 rounded-[32px] shadow-2xl shadow-blue-900/5 relative z-10"
+        className="w-full max-w-[440px] bg-white/70 backdrop-blur-xl border border-white p-6 sm:p-10 rounded-[32px] shadow-2xl shadow-blue-900/5 relative z-10"
       >
         <div className="text-center mb-8">
            <Link to="/" className="inline-flex items-center gap-2 mb-6 group">

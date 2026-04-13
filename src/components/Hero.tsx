@@ -129,7 +129,7 @@ function Hero() {
         >
           <div className="bg-white p-10 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-none border border-gray-100 relative">
             <h3 className="text-[#333] text-2xl font-bold leading-tight mb-8">
-              Speak to our travel expert for free!
+             Let’s design your next escape, together.
             </h3>
 
             <form className="space-y-5">
@@ -194,7 +194,7 @@ function Hero() {
 
               {/* Disclaimer */}
               <p className="text-[12px] text-gray-500 leading-relaxed pt-2">
-                Thank you for submitting your details. By providing your number, you agree to be contacted by our team. We will call you shortly.
+                Thank you for your details. Our travel experts will be in touch shortly to help you plan your journey.
               </p>
 
               {/* Submit Button */}
@@ -209,24 +209,56 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* Mobile Form Overlay - Matching Design */}
-      <div className="lg:hidden absolute bottom-0 left-0 w-full p-4 z-30">
-        <div className="bg-white p-6 shadow-2xl rounded-none">
-          <h3 className="text-gray-900 text-lg font-bold mb-4">Talk to an Expert</h3>
-          <form className="flex flex-col gap-3">
-            <input
-              type="text"
-              placeholder="Full name"
-              className="bg-white border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 rounded-none text-sm"
-            />
-            <input
-              type="tel"
-              placeholder="Mobile number"
-              className="bg-white border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 rounded-none text-sm"
-            />
-            <button className="bg-[#8c6c3c] text-white font-bold py-4 uppercase tracking-[0.2em] text-[12px] rounded-none shadow-lg">
+      {/* Mobile Form Section - Improved Design */}
+      <div className="lg:hidden w-full bg-white px-6 py-12 relative z-30">
+        <div className="max-w-md mx-auto">
+          <h3 className="text-2xl font-bold mb-2 text-gray-900">Let’s design your next escape</h3>
+          <p className="text-gray-500 text-sm mb-8 italic">Our travel experts will help you plan your perfect journey.</p>
+          
+          <form className="space-y-4">
+            <div className="space-y-1">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Full Name</label>
+              <input
+                type="text"
+                placeholder="Ex. John Doe"
+                className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 rounded-lg focus:outline-none focus:border-[#8c6c3c] transition-all"
+              />
+            </div>
+            
+            <div className="grid grid-cols-3 gap-3">
+              <div className="col-span-1 space-y-1">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Code</label>
+                <select className="w-full bg-gray-50 border border-gray-200 px-3 py-3 text-gray-900 rounded-lg focus:outline-none appearance-none">
+                  <option>+91</option>
+                  <option>+1</option>
+                  <option>+44</option>
+                </select>
+              </div>
+              <div className="col-span-2 space-y-1">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Mobile Number</label>
+                <input
+                  type="tel"
+                  placeholder="Enter number"
+                  className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 rounded-lg focus:outline-none focus:border-[#8c6c3c] transition-all"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Email Address</label>
+              <input
+                type="email"
+                placeholder="Ex. john@example.com"
+                className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 rounded-lg focus:outline-none focus:border-[#8c6c3c] transition-all"
+              />
+            </div>
+
+            <button className="w-full bg-[#8c6c3c] hover:bg-[#7a5e34] text-white font-bold py-4 rounded-lg uppercase tracking-widest text-[12px] shadow-xl shadow-amber-900/10 transition-all mt-4 active:scale-95">
               Submit Details
             </button>
+            <p className="text-[10px] text-gray-400 text-center mt-4">
+              *Our experts will contact you within 24 hours.
+            </p>
           </form>
         </div>
       </div>

@@ -183,21 +183,11 @@ function PackageDetail() {
                                  {pkg.route.split(' - ').join(' → ')}
                               </p>
 
-                              {/* Seller Info */}
                               <div className="flex items-center gap-3 pt-2">
-                                 <div className="w-11 h-11 bg-orange-50 flex items-center justify-center rounded-lg border border-orange-100 shrink-0">
-                                    <span className="text-orange-500 font-black italic text-xl">iek</span>
-                                 </div>
-                                 <div className="space-y-0.5">
-                                    <p className="text-[13px] font-bold text-gray-800">
-                                       Sold By: <span className="text-[#3d81bb] hover:underline cursor-pointer">Sulekha Tours Private Limited</span>
-                                       <ShieldCheck size={14} className="inline ml-1 text-[#3d81bb]" />
-                                    </p>
-                                    <div className="flex items-center gap-1.5">
-                                       <Star size={14} fill="#fcc419" stroke="#fcc419" />
-                                       <span className="text-[13px] font-bold text-gray-800">4.8</span>
-                                       <span className="text-[12px] text-gray-400 font-medium">(68 reviews)</span>
-                                    </div>
+                                 <div className="flex items-center gap-1.5 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-100">
+                                    <Star size={14} fill="#fcc419" stroke="#fcc419" />
+                                    <span className="text-[13px] font-bold text-gray-800">{pkg.rating}</span>
+                                    <span className="text-[12px] text-gray-400 font-medium">({pkg.reviews} verified reviews)</span>
                                  </div>
                               </div>
                            </div>
@@ -359,10 +349,10 @@ function PackageDetail() {
                                  </div>
                                  <div>
                                     <h3 className="font-bold text-[18px] text-gray-900 flex items-center gap-1.5">
-                                       Sulekha Tours Private Limited Reviews
+                                       Eleqt Certified Reviews
                                        <ShieldCheck size={18} className="text-[#3d81bb] fill-blue-50" />
                                     </h3>
-                                    <p className="text-[13px] text-gray-500 font-medium">Travel agency in New Delhi • <span className="text-[#3d81bb] cursor-pointer hover:underline">View Profile</span></p>
+                                    <p className="text-[13px] text-gray-500 font-medium">Verified experiences from our global travellers</p>
                                  </div>
                               </div>
                            </div>
@@ -386,8 +376,8 @@ function PackageDetail() {
 
                               <div className="flex flex-col items-center justify-center text-center space-y-1">
                                  <div className="flex items-center gap-2 mb-1">
-                                    <div className="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-red-600 font-black text-[10px] border border-red-100">H</div>
-                                    <span className="text-[14px] font-bold text-gray-800">Holidify Rating</span>
+                                    <div className="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-red-600 font-black text-[10px] border border-red-100">E</div>
+                                    <span className="text-[14px] font-bold text-gray-800">Eleqt Rating</span>
                                  </div>
                                  <p className="text-[32px] font-black leading-none text-gray-900">4.8</p>
                                  <div className="flex gap-0.5">
@@ -452,7 +442,7 @@ function PackageDetail() {
                                  {review.reply && (
                                     <div className="ml-10 bg-gray-50 p-5 rounded-xl border border-gray-100 space-y-2 relative">
                                        <div className="absolute top-[-10px] left-6 w-3 h-3 bg-gray-50 border-l border-t border-gray-100 rotate-45" />
-                                       <p className="text-[13px] font-bold text-gray-800">Sulekha Tours Private Limited replied <span className="text-gray-400 font-medium ml-1">23 Dec, 2025</span></p>
+                                       <p className="text-[13px] font-bold text-gray-800">Eleqt Support replied <span className="text-gray-400 font-medium ml-1">23 Dec, 2025</span></p>
                                        <p className="text-[13px] text-gray-600 leading-relaxed font-medium">{review.reply}</p>
                                     </div>
                                  )}
@@ -511,11 +501,13 @@ function PackageDetail() {
 
                   {/* 🎯 30% RIGHT STICKY SIDEBAR */}
                   <div className="lg:w-[32%] w-full">
-                     <div className="sticky top-[100px] bg-white border border-gray-200 rounded-2xl p-6 md:p-8 space-y-5 shadow-sm">
+                     <div className="sticky top-[100px] hidden lg:block bg-white border border-gray-200 rounded-2xl p-8 space-y-6 shadow-sm">
                         <div className="flex flex-col gap-1.5">
-                           <div className="flex items-baseline gap-2 overflow-hidden">
+                           <div className="flex items-baseline gap-2">
                               <span className="text-[13px] text-gray-500 whitespace-nowrap">Starting From</span>
-                              <span className="text-[26px] font-black text-gray-900 leading-none">₹{pkg.price.toLocaleString()}*</span>
+                              <span className="text-[28px] font-black text-gray-900 leading-none">₹{pkg.price.toLocaleString()}*</span>
+                           </div>
+                           <div className="flex items-center gap-2">
                               <span className="text-[15px] text-gray-400 line-through leading-none">₹{(pkg.price + 2000).toLocaleString()}</span>
                               <span className="bg-green-100 text-green-700 text-[10px] font-black px-1.5 py-0.5 rounded leading-none shrink-0 border border-green-200 uppercase">9% off</span>
                            </div>
@@ -525,7 +517,7 @@ function PackageDetail() {
                            whileHover={{ scale: 1.02 }}
                            whileTap={{ scale: 0.98 }}
                            onClick={handleCustomization}
-                           className="w-full bg-[#ff4d6d] hover:bg-[#ff3355] text-white h-[52px] rounded-xl font-bold text-[18px] transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-100/50"
+                           className="w-full bg-[#ff4d6d] hover:bg-[#ff3355] text-white h-[56px] rounded-xl font-bold text-[18px] transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-100/50"
                         >
                            Get Customized Offers
                         </motion.button>
@@ -534,19 +526,42 @@ function PackageDetail() {
                            Compare quotes from 3 agents and get best deals
                         </p>
 
-                        <div className="pt-4 border-t border-gray-100 space-y-4">
-                           <div className="flex gap-3 text-gray-600">
-                              <ShieldIcon size={18} className="shrink-0 text-blue-500" />
-                              <p className="text-[12px] font-medium leading-relaxed">Holidify Safe & Verified Booking</p>
+                        <div className="pt-6 border-t border-gray-100 space-y-5">
+                           <div className="flex gap-4 text-gray-600 items-center">
+                              <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                                 <ShieldIcon size={16} className="text-blue-500" />
+                              </div>
+                              <p className="text-[12px] font-medium leading-relaxed uppercase tracking-wider">Eleqt Safe & Verified Booking</p>
                            </div>
-                           <div className="flex gap-3 text-gray-600">
-                              <Clock size={18} className="shrink-0 text-blue-500" />
-                              <p className="text-[12px] font-medium leading-relaxed">Quotes in under 24 hours</p>
+                           <div className="flex gap-4 text-gray-600 items-center">
+                              <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                                 <Clock size={16} className="text-blue-500" />
+                              </div>
+                              <p className="text-[12px] font-medium leading-relaxed uppercase tracking-wider">Quotes in under 24 hours</p>
                            </div>
                         </div>
                      </div>
                   </div>
 
+               </div>
+            </div>
+
+            {/* Sticky Mobile Bottom Bar */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-6 py-4 z-[100] shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+               <div className="flex items-center justify-between gap-4 max-w-lg mx-auto">
+                  <div className="flex flex-col">
+                     <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Starting From</span>
+                     <div className="flex items-center gap-2">
+                        <span className="text-[22px] font-black text-gray-900">₹{pkg.price.toLocaleString()}</span>
+                        <span className="text-[12px] text-gray-400 line-through">₹{(pkg.price + 2000).toLocaleString()}</span>
+                     </div>
+                  </div>
+                  <button 
+                     onClick={handleCustomization}
+                     className="bg-[#ff4d6d] text-white px-6 py-4 rounded-xl font-bold text-[14px] shadow-lg active:scale-95 transition-all"
+                  >
+                     Get Quotes
+                  </button>
                </div>
             </div>
          </div>

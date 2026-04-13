@@ -119,12 +119,12 @@ function Payment() {
                   initial={{ opacity: 0, y: 10 }} 
                   animate={{ opacity: 1, y: 0 }}
                   onSubmit={handlePayment} 
-                  className="bg-white rounded-[40px] p-10 border border-gray-100 shadow-xl shadow-blue-900/5 space-y-8"
+                  className="bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 border border-gray-100 shadow-xl shadow-blue-900/5 space-y-8"
                 >
                    <div className="space-y-1">
                       <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Card Number</label>
                       <div className="relative">
-                         <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                         <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden sm:flex items-center gap-2">
                             <div className="w-8 h-5 bg-gray-100 rounded-sm" />
                             <div className="w-8 h-5 bg-gray-100 rounded-sm" />
                          </div>
@@ -162,7 +162,7 @@ function Payment() {
 
            {/* RIGHT: Order Summary */}
            <div className="lg:w-[350px]">
-              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="bg-[#212529] rounded-[40px] p-10 text-white shadow-2xl relative overflow-hidden sticky top-28">
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="bg-[#212529] rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden lg:sticky lg:top-28">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
                  
                  <h2 className="text-xl font-black mb-8 flex items-center gap-3 tracking-tighter">

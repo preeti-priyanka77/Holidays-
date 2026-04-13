@@ -90,11 +90,11 @@ function CustomizePackage() {
              <motion.div
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}
-               className="bg-white rounded-[40px] border border-gray-100 p-10 shadow-xl shadow-blue-900/5"
+               className="bg-white rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 shadow-xl shadow-blue-900/5"
              >
                 <div className="mb-10 text-center lg:text-left">
-                   <h1 className="text-3xl font-black text-[#212529] mb-2 tracking-tighter">Customize Your Journey</h1>
-                   <p className="text-gray-400 font-bold">Tell us your preferences for a perfect stay</p>
+                   <h1 className="text-2xl sm:text-3xl font-black text-[#212529] mb-2 tracking-tighter">Customize Your Journey</h1>
+                   <p className="text-gray-400 font-bold text-sm sm:text-base">Tell us your preferences for a perfect stay</p>
                 </div>
 
                 <form onSubmit={handleProceed} className="space-y-8">

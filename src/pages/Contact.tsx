@@ -24,17 +24,17 @@ function Contact() {
            
            <div className="space-y-12">
               <div>
-                 <motion.h1 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-5xl md:text-6xl font-black text-[#212529] tracking-tighter mb-4">
+                 <motion.h1 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-4xl sm:text-5xl md:text-6xl font-black text-[#212529] tracking-tighter mb-4">
                    Get In <br /> <span className="text-[#0056b3]">Touch</span>
                  </motion.h1>
-                 <p className="text-gray-400 font-bold text-lg leading-relaxed">
+                 <p className="text-gray-400 font-bold text-base sm:text-lg leading-relaxed">
                    Looking for a personalized itinerary? We're here to help you curate your next masterpiece.
                  </p>
               </div>
 
               <div className="space-y-8">
                  {[
-                   { icon: <Phone className="text-blue-500" />, title: "Call Us", value: "+91 83050 89097" },
+                   { icon: <Phone className="text-blue-500" />, title: "Call Us", value: "+91 9777906587 " },
                    { icon: <Mail className="text-red-500" />, title: "Email", value: "packages@checkin.vacations" },
                    { icon: <MapPin className="text-green-500" />, title: "Visit Us", value: "New Delhi, India" }
                  ].map((item, i) => (

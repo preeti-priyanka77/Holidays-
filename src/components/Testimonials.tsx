@@ -58,12 +58,12 @@ function Testimonials() {
           className="mb-14"
         >
           <p className="text-white/70 text-[11px] font-bold uppercase tracking-[0.4em] mb-3">
-            TESTIMONIALS
+            CLIENT EXPERIENCES
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Creating Happy Holidays for 10+ years
+            Real journeys. Real stories.
           </h2>
-          <p className="text-white/80 text-lg font-medium">Hear from our past travellers</p>
+          <p className="text-white/80 text-lg font-medium"> Discover their journeys with Eleqt</p>
         </motion.div>
 
         <motion.div
