@@ -65,7 +65,6 @@ function PackageSlider({ title, packages, destinations }: { title: string, packa
                   days={pkg.days}
                   priceFrom={pkg.price_from}
                   imageUrl={pkg.image_url}
-                  slug={pkg.slug}
                 />
               </motion.div>
             ))}
@@ -180,7 +179,7 @@ function PackageGrid() {
               <div className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-8">
                 {[
                   { title: "Rajasthan", nights: 5, days: 6, priceFrom: 22999, imageUrl: "https://images.unsplash.com/photo-1599661046289-e31897846e41", slug: "rajasthan" },
-                  { title: "Ladakh", nights: 6, days: 7, priceFrom: 28999, imageUrl: "https://images.unsplash.com/photo-1609948543911-0a0e9d5e6f6e", slug: "ladakh" },
+                  { title: "Ladakh", nights: 6, days: 7, priceFrom: 28999, imageUrl: "https://images.unsplash.com/photo-1587595431973-160d0d94add1", slug: "ladakh" },
                   { title: "Manali", nights: 4, days: 5, priceFrom: 15999, imageUrl: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23", slug: "manali" },
                   { title: "Udaipur", nights: 3, days: 4, priceFrom: 13999, imageUrl: "https://images.unsplash.com/photo-1564507592333-c60657eea523", slug: "udaipur" }
                 ].map((pkg, idx) => (
@@ -198,7 +197,6 @@ function PackageGrid() {
                       days={pkg.days}
                       priceFrom={pkg.priceFrom}
                       imageUrl={pkg.imageUrl}
-                      slug={pkg.slug}
                     />
                   </motion.div>
                 ))}

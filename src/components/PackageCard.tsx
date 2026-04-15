@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 interface PackageCardProps {
   title: string;
@@ -7,14 +6,23 @@ interface PackageCardProps {
   days: number;
   priceFrom: number;
   imageUrl: string;
-  slug: string;
 }
 
-function PackageCard({ title, nights, days, priceFrom, imageUrl, slug }: PackageCardProps) {
+function PackageCard({ title, nights, days, priceFrom, imageUrl }: PackageCardProps) {
+  const scrollToEnquiry = () => {
+    const element = document.getElementById('enquiry-form');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <Link to={`/package/${slug}`} className="block h-full w-full">
+    <div 
+      onClick={scrollToEnquiry} 
+      className="block h-full w-full cursor-pointer transition-transform duration-300 active:scale-[0.98]"
+    >
       <motion.div
-        className="relative h-[500px] md:h-[580px] w-full overflow-hidden cursor-pointer group bg-neutral-900 rounded-none shadow-2xl transition-all duration-500"
+        className="relative h-[500px] md:h-[580px] w-full overflow-hidden group bg-neutral-900 rounded-none shadow-2xl transition-all duration-500"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         whileHover={{ y: -10 }}
@@ -84,13 +92,13 @@ function PackageCard({ title, nights, days, priceFrom, imageUrl, slug }: Package
               className="opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100"
             >
               <div className="px-10 py-4 bg-amber-500 text-white text-[12px] font-bold uppercase tracking-[0.2em] rounded-none shadow-2xl hover:bg-amber-600 transition-colors">
-                Explore Now
+                Enquire Now
               </div>
             </motion.div>
           </div>
         </div>
       </motion.div>
-    </Link>
+    </div>
   );
 }
 

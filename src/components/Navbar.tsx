@@ -71,61 +71,80 @@ function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <>
+            {/* Backdrop Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-md z-[110]"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[110]"
             />
+            
+            {/* Mobile Menu Container - Adjusted to Drawer Style */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 w-full max-w-[320px] bg-white shadow-2xl z-[120] p-8 flex flex-col"
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed inset-y-0 right-0 w-[85%] max-w-[400px] h-screen bg-[#f8f5f0] shadow-2xl z-[120] p-8 flex flex-col overflow-y-auto"
             >
-              <div className="flex justify-end mb-8">
+              <div className="flex justify-between items-center mb-12">
+                {/* Re-adding logo for context in full-screen menu */}
+                <img src={Holidays} alt="logo" className='w-32 h-auto' />
                 <button
-                  className="p-2 text-gray-900 transition-colors"
+                  className="p-2 text-gray-900 transition-colors hover:text-amber-600"
                   onClick={() => setIsOpen(false)}
                 >
-                  <X size={24} />
+                  <X size={28} />
                 </button>
               </div>
 
-              <div className="flex flex-col gap-8">
-                <div className="flex flex-col gap-4">
-                  <a href="tel:8305089097" className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-[#916a3b]/10 flex items-center justify-center text-[#916a3b] rounded-full">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Call Us</p>
-                      <p className="font-bold text-gray-900">+91 9777906587</p>
-                    </div>
-                  </a>
-                  <a href="mailto:eleqtholidays@gmail.com" className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-[#916a3b]/10 flex items-center justify-center text-[#916a3b] rounded-full">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Email Us</p>
-                      <p className="font-[600] text-gray-900 text-[13px] break-all">eleqtholidays@gmail.com</p>
-                    </div>
-                  </a>
+              <div className="flex flex-col gap-10">
+                {/* Navigation Links */}
+                <div className="flex flex-col gap-6">
+                  {[
+                    { name: 'Home', path: '/' },
+                    { name: 'About Us', path: '/about' },
+                    { name: 'Packages', path: '/contact' }
+                  ].map((link) => (
+                    <Link 
+                      key={link.name}
+                      to={link.path} 
+                      onClick={() => setIsOpen(false)}
+                      className="text-3xl font-bold text-gray-900 border-b border-gray-200 pb-2 hover:text-[#b08d57] transition-all duration-300"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
                 </div>
 
-                <div className="flex flex-col gap-6">
-                  <Link to="/" className="text-lg font-bold text-gray-900 hover:text-[#916a3b] transition-colors">Home</Link>
-                  <Link to="/about" className="text-lg font-bold text-gray-900 hover:text-[#916a3b] transition-colors">About Us</Link>
-                  <Link to="/contact" className="text-lg font-bold text-gray-900 hover:text-[#916a3b] transition-colors">Packages</Link>
+                {/* Contact Info */}
+                <div className="flex flex-col gap-4 mt-4">
+                  <a href="tel:+919777906587" className="flex items-center gap-4 p-4 bg-white border border-gray-100 shadow-sm">
+                    <div className="w-12 h-12 bg-[#b08d57]/10 flex items-center justify-center text-[#b08d57] rounded-full">
+                      <Phone size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em]">Call Us</p>
+                      <p className="font-bold text-gray-900 text-lg">+91 9777906587</p>
+                    </div>
+                  </a>
+                  
+                  <a href="mailto:eleqtholidays@gmail.com" className="flex items-center gap-4 p-4 bg-white border border-gray-100 shadow-sm">
+                    <div className="w-12 h-12 bg-[#b08d57]/10 flex items-center justify-center text-[#b08d57] rounded-full">
+                      <Mail size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em]">Email Us</p>
+                      <p className="font-bold text-gray-900 text-base break-all">eleqtholidays@gmail.com</p>
+                    </div>
+                  </a>
                 </div>
 
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full bg-[#916a3b] text-white text-center font-bold uppercase tracking-[0.2em] py-5 mt-4 rounded-lg shadow-lg"
+                  className="w-full bg-[#b08d57] text-white text-center font-bold uppercase tracking-[0.3em] py-5 mt-4 shadow-lg hover:bg-[#8e7246] transition-all"
                 >
                   Plan My Trip
                 </Link>

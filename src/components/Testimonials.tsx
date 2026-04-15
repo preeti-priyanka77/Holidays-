@@ -43,7 +43,7 @@ function Testimonials() {
     <section
       className="relative py-24 px-6 md:px-10 bg-cover bg-center overflow-hidden"
       style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1920&q=80)'
+        backgroundImage: 'url(https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1920&q=80)'
       }}
     >
       {/* Overlay */}

@@ -1,82 +1,106 @@
 import { motion } from 'framer-motion';
-import SundayImg from '../assets/sunday.png';
-import ClubhouseImg from '../assets/clubhouse.png';
-import PaletteImg from '../assets/palette.png';
-import BelvillaImg from '../assets/belvilla.png';
-import DancenterImg from '../assets/dancenter.png';
+import { Utensils, Bed, Car, Ship, Map, Activity } from 'lucide-react';
 
-const BRANDS = [
+const CURATED_SERVICES = [
   {
-    name: "Sunday hotels",
-    subtitle: "Contemporary Lifestyle Hotels",
-    image: SundayImg
+    title: "Curated Dining",
+    description: "Indulge in thoughtfully curated dining experiences",
+    image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80",
+    icon: Utensils
   },
   {
-    name: "Clubhouse",
-    subtitle: "Lifestyle Hotels with Social Spaces",
-    image: ClubhouseImg
+    title: "Comfortable Stays",
+    description: "Relax in thoughtfully selected, comfortable stays",
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+    icon: Bed
   },
   {
-    name: "Palette",
-    subtitle: "",
-    image: PaletteImg
+    title: "Seamless Transfers",
+    description: "Seamless transfers, end to end",
+    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+    icon: Car
   },
   {
-    name: "Belvilla",
-    subtitle: "",
-    image: BelvillaImg
+    title: "Scenic Cruises",
+    description: "Experience scenic cruise moments",
+    image: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=800&q=80",
+    icon: Ship
   },
   {
-    name: "DanCenter",
-    subtitle: "",
-    image: DancenterImg
+    title: "Immersive Sightseeing",
+    description: "Explore immersive sightseeing experiences",
+    image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=800&q=80",
+    icon: Map
+  },
+  {
+    title: "Curated Activities",
+    description: "Enjoy carefully curated activities",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
+    icon: Activity
   }
 ];
 
 function Brands() {
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-[#fafaf9]">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <motion.div
-          className="mb-16 md:mb-24"
+          className="mb-16 md:mb-24 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-[10px] md:text-[11px] font-bold tracking-[0.5em] text-amber-600 uppercase mb-4">
-            OUR CURATED BRANDS
+          <p className="text-[10px] md:text-[11px] font-bold tracking-[0.5em] text-[#b08d57] uppercase mb-4">
+            OUR CURATED EXPERIENCES
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter max-w-2xl text-balance">
-            Designed for Every <span className="text-gray-400 italic font-medium">Extraordinary</span> Stay
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter max-w-3xl mx-auto text-balance">
+            Every detail, <span className="text-[#b08d57] italic font-medium">thoughtfully</span> designed for you
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-x-12 md:gap-y-20">
-          {BRANDS.map((brand, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {CURATED_SERVICES.map((service, index) => (
             <motion.div
               key={index}
-              className="group cursor-pointer"
+              className="group relative cursor-pointer overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
             >
-              <div className="w-full h-[280px] md:h-[320px] overflow-hidden rounded-none shadow-xl transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+              <div className="absolute inset-0 z-0">
                 <img
-                  src={brand.image}
-                  alt={brand.name}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=600&q=80";
-                  }}
+                  src={service.image}
+                  alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
+                {/* Initial Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-[#b08d57]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="mt-8 px-4 text-center sm:text-left">
-                <h3 className="text-2xl font-bold text-gray-900 tracking-tight transition-colors group-hover:text-amber-600">{brand.name}</h3>
-                {brand.subtitle && (
-                  <p className="text-sm font-medium text-gray-400 mt-2 tracking-wide uppercase">{brand.subtitle}</p>
-                )}
+
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 sm:p-10">
+                <motion.div 
+                  className="mb-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-white group-hover:bg-[#b08d57] group-hover:border-[#b08d57] transition-all duration-300"
+                >
+                  <service.icon size={22} strokeWidth={1.5} />
+                </motion.div>
+                
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed max-w-[240px] transform transition-all duration-500 group-hover:text-white">
+                  {service.description}
+                </p>
+                
+                {/* Decorative Line */}
+                <div className="w-0 h-[1px] bg-white mt-6 group-hover:w-full transition-all duration-700 ease-out" />
               </div>
+
+              {/* Shadow Effect */}
+              <div className="absolute inset-0 rounded-none shadow-[inset_0_0_100px_rgba(0,0,0,0.2)] group-hover:shadow-[0_20px_40px_rgba(176,141,87,0.3)] transition-all duration-500" />
             </motion.div>
           ))}
         </div>

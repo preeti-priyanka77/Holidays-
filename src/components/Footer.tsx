@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, Instagram, Twitter, Youtube, Facebook, ArrowRight } from 'lucide-react';
+import { Phone, Mail, Instagram, Youtube, Linkedin,Facebook, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full">
@@ -156,16 +155,18 @@ function Footer() {
               className="flex gap-6 md:justify-end items-center"
             >
               {[
-                { icon: Instagram, href: '#' },
-                { icon: Twitter, href: '#' },
-                { icon: Youtube, href: '#' },
-                { icon: Facebook, href: '#' },
+                { icon: Instagram, href: 'https://www.instagram.com/eleqtholidays.in/' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/company/eleqtholidays-in/' },
+                { icon: Youtube, href: 'https://www.youtube.com/@EleqtHolidays/' },
+                { icon: Facebook, href: 'https://www.facebook.com/eleqtholidays.in/' },
               ].map((social, idx) => (
                 <motion.a
                   key={idx}
                   href={social.href}
-                  whileHover={{ scale: 1.15 }}
-                  className="p-3 border border-white/10 rounded-full hover:bg-white/5 transition-all duration-300 text-white/60 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.15, color: "#b08d57", borderColor: "rgba(176, 141, 87, 0.5)" }}
+                  className="p-3 border border-white/10 rounded-full hover:bg-white/5 transition-all duration-300 text-white/60"
                 >
                   <social.icon size={20} strokeWidth={1.5} />
                 </motion.a>

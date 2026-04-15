@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, MapPin, Send, Globe, Instagram, Twitter, Facebook, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Phone, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -15,57 +17,139 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] pt-32 pb-24 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-blue-50/40 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[30%] h-[30%] bg-red-50/40 rounded-full blur-[140px] pointer-events-none" />
+    <div className="min-h-screen bg-[#f8f5f0]">
+      <Navbar />
+      
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="pt-32 pb-24"
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            
+            {/* Left Column: Contact Info */}
+            <div className="space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <p className="text-[11px] font-bold tracking-[0.5em] text-[#b08d57] uppercase mb-4">
+                  GET IN TOUCH
+                </p>
+                <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter mb-8 leading-[1.1]">
+                  Let’s design your <br />
+                  <span className="text-[#b08d57] italic font-medium">next escape</span>
+                </h1>
+                <p className="text-gray-500 text-lg leading-relaxed max-w-lg">
+                  Looking for a personalized itinerary? Our travel experts are ready to curate your next extraordinary journey.
+                </p>
+              </motion.div>
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.4fr] gap-20">
-           
-           <div className="space-y-12">
-              <div>
-                 <motion.h1 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-4xl sm:text-5xl md:text-6xl font-black text-[#212529] tracking-tighter mb-4">
-                   Get In <br /> <span className="text-[#0056b3]">Touch</span>
-                 </motion.h1>
-                 <p className="text-gray-400 font-bold text-base sm:text-lg leading-relaxed">
-                   Looking for a personalized itinerary? We're here to help you curate your next masterpiece.
-                 </p>
+              <div className="space-y-10">
+                {[
+                  { 
+                    icon: Phone, 
+                    title: "Call Us", 
+                    value: "+91 9777906587",
+                    href: "tel:+919777906587"
+                  },
+                  { 
+                    icon: Mail, 
+                    title: "Email", 
+                    value: "eleqtholidays@gmail.com",
+                    href: "mailto:eleqtholidays@gmail.com"
+                  },
+                  { 
+                    icon: MapPin, 
+                    title: "Visit Us", 
+                    value: "Bhubaneswar, India",
+                    href: "#"
+                  }
+                ].map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    className="flex items-center gap-6 group"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center border border-gray-100 group-hover:bg-[#b08d57] group-hover:text-white transition-all duration-300">
+                      <item.icon size={22} strokeWidth={1.5} className="group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div>
+                      <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#b08d57] mb-1">{item.title}</h4>
+                      <a 
+                        href={item.href} 
+                        className="text-xl font-bold text-gray-900 group-hover:text-[#b08d57] transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
+            </div>
 
-              <div className="space-y-8">
-                 {[
-                   { icon: <Phone className="text-blue-500" />, title: "Call Us", value: "+91 9777906587 " },
-                   { icon: <Mail className="text-red-500" />, title: "Email", value: "packages@checkin.vacations" },
-                   { icon: <MapPin className="text-green-500" />, title: "Visit Us", value: "New Delhi, India" }
-                 ].map((item, i) => (
-                   <div key={i} className="flex items-start gap-6 group">
-                      <div className="w-14 h-14 rounded-2xl bg-white shadow-xl flex items-center justify-center border border-gray-50 group-hover:bg-[#0056b3] group-hover:text-white transition-all">
-                         {item.icon}
-                      </div>
-                      <div>
-                         <h4 className="text-gray-400 font-black uppercase text-[10px] tracking-widest mb-1">{item.title}</h4>
-                         <p className="text-[20px] font-black text-[#212529] leading-none group-hover:text-[#0056b3] transition-colors">{item.value}</p>
-                      </div>
-                   </div>
-                 ))}
-              </div>
-           </div>
-
-           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-white rounded-[40px] p-12 border border-gray-50 shadow-2xl shadow-blue-900/5">
-              <h2 className="text-3xl font-black text-[#212529] tracking-tight mb-8 text-center lg:text-left">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" required value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" className="w-full h-14 bg-gray-50 border border-gray-100 px-6 rounded-2xl outline-none focus:bg-white focus:border-[#0056b3] transition-all font-bold" />
-                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="w-full h-14 bg-gray-50 border border-gray-100 px-6 rounded-2xl outline-none focus:bg-white focus:border-[#0056b3] transition-all font-bold" />
-                 </div>
-                 <textarea required rows={5} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" className="w-full bg-gray-50 border border-gray-100 px-6 py-4 rounded-2xl outline-none focus:bg-white focus:border-[#0056b3] transition-all font-bold resize-none" />
-                 <button type="submit" className="w-full bg-[#0056b3] hover:bg-[#004494] text-white h-16 rounded-[24px] font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] shadow-xl shadow-blue-100">
-                    {isSent ? <><CheckCircle2 size={24} /> Sent!</> : <>Send Inquiry <Send size={20} className="opacity-60" /></>}
-                 </button>
+            {/* Right Column: Form */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className="bg-white p-10 md:p-14 shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-[#e5e1da] rounded-none"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-10">Send a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#b08d57] ml-1">Full Name</label>
+                    <input 
+                      type="text" 
+                      required 
+                      value={name} 
+                      onChange={(e) => setName(e.target.value)} 
+                      placeholder="Your Name" 
+                      className="w-full bg-[#fcfcfc] border-b border-[#e5e1da] py-4 px-1 focus:outline-none focus:border-[#b08d57] transition-all text-gray-900 font-medium placeholder:text-gray-300" 
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#b08d57] ml-1">Email Address</label>
+                    <input 
+                      type="email" 
+                      required 
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)} 
+                      placeholder="hello@example.com" 
+                      className="w-full bg-[#fcfcfc] border-b border-[#e5e1da] py-4 px-1 focus:outline-none focus:border-[#b08d57] transition-all text-gray-900 font-medium placeholder:text-gray-300" 
+                    />
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-[#b08d57] ml-1">Message</label>
+                  <textarea 
+                    required 
+                    rows={4} 
+                    value={message} 
+                    onChange={(e) => setMessage(e.target.value)} 
+                    placeholder="Tell us about your dream trip..." 
+                    className="w-full bg-[#fcfcfc] border-b border-[#e5e1da] py-4 px-1 focus:outline-none focus:border-[#b08d57] transition-all text-gray-900 font-medium placeholder:text-gray-300 resize-none" 
+                  />
+                </div>
+                <button 
+                  type="submit" 
+                  disabled={isSent}
+                  className="w-full bg-[#212121] hover:bg-[#b08d57] text-white h-16 rounded-none font-bold uppercase tracking-widest text-[12px] flex items-center justify-center gap-3 transition-all duration-300 active:scale-[0.98] shadow-lg"
+                >
+                  {isSent ? <><CheckCircle2 size={20} /> Request Sent</> : <>Send Inquiry <Send size={16} className="opacity-60" /></>}
+                </button>
               </form>
-           </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </motion.div>
+      {/* <Footer /> */}
     </div>
   );
 }
