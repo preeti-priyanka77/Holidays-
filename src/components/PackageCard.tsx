@@ -2,13 +2,14 @@ import { motion } from 'framer-motion';
 
 interface PackageCardProps {
   title: string;
+  subtitle?: string;
   nights: number;
   days: number;
-  priceFrom: number;
+  priceFrom: string | number;
   imageUrl: string;
 }
 
-function PackageCard({ title, nights, days, priceFrom, imageUrl }: PackageCardProps) {
+function PackageCard({ title, subtitle, nights, days, priceFrom, imageUrl }: PackageCardProps) {
   const scrollToEnquiry = () => {
     const element = document.getElementById('enquiry-form');
     if (element) {
@@ -63,8 +64,17 @@ function PackageCard({ title, nights, days, priceFrom, imageUrl }: PackageCardPr
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter mb-2 transition-all duration-500 group-hover:scale-105"
               >
-                {title.split(' (')[0]}
+                {title}
               </motion.h3>
+              {subtitle && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  className="text-white/80 text-sm md:text-lg italic mb-2"
+                >
+                  {subtitle}
+                </motion.p>
+              )}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -83,7 +93,7 @@ function PackageCard({ title, nights, days, priceFrom, imageUrl }: PackageCardPr
             <div className="mb-4">
               <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Pricing Starts At</p>
               <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                ₹{priceFrom.toLocaleString()}
+                {typeof priceFrom === 'number' ? `₹${priceFrom.toLocaleString()}` : priceFrom}
               </p>
             </div>
 

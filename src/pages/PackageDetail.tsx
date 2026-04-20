@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import Navbar from '../components/Navbar';
 import { useParams, useLocation, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -93,7 +92,6 @@ function PackageDetail() {
 
    return (
       <>
-         <Navbar />
          <div className="min-h-screen bg-white font-['Inter',sans-serif]">
 
             {/* 🔝 TOP NAVIGATION TABS */}

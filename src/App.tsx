@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsappButton';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -20,8 +19,8 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="flex flex-col min-h-screen">
-          <Routes>
+        <Routes>
+          <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -35,13 +34,12 @@ function App() {
             <Route path="/terms-of-use" element={<TermsOfUse />} />
             <Route path="/guest-policy" element={<GuestPolicy />} />
             <Route path="/profile" element={<Profile />} />
-          </Routes>
-          <Footer />
-          <WhatsAppButton />
-        </div>
+          </Route>
+        </Routes>
       </Router>
     </AuthProvider>
   );
 }
 
 export default App;
+

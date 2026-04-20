@@ -1,3 +1,7 @@
+import jagannathImg from '../assets/images/jagannath.jpg';
+import brajImg from '../assets/images/braj.jpg';
+import ujjainImg from '../assets/images/ujjain.jpg';
+import dodhamImg from '../assets/images/dodham.jpg';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
@@ -7,9 +11,10 @@ import { MOCK_PACKAGES } from '../data/mockPackages';
 interface Package {
   id: string;
   title: string;
+  subtitle?: string;
   nights: number;
   days: number;
-  price_from: number;
+  price_from: number | string;
   image_url: string;
   slug: string;
   destination_id: string;
@@ -60,7 +65,7 @@ function PackageSlider({ title, packages, destinations }: { title: string, packa
                 transition={{ delay: idx * 0.1 }}
               >
                 <PackageCard
-                  title={destinations.find(d => d.id === pkg.destination_id)?.name || pkg.title}
+                  title={pkg.title}
                   nights={pkg.nights}
                   days={pkg.days}
                   priceFrom={pkg.price_from}
@@ -94,8 +99,8 @@ function PackageGrid() {
 
         if (pkgError || destError || !pkgs || pkgs.length === 0) {
           const mockPkgs: Package[] = Object.values(MOCK_PACKAGES).map(p => {
-            const isIntl = /bali|vietnam|dubai|maldives|singapore|thailand|europe|switzerland|malaysia/i.test(p.slug) ||
-              /bali|vietnam|dubai|maldives|singapore|thailand|europe|switzerland|malaysia/i.test(p.title);
+            const isIntl = /bali|vietnam|dubai|maldives|singapore|thailand|europe|switzerland|malaysia|almaty|japan/i.test(p.slug) ||
+              /bali|vietnam|dubai|maldives|singapore|thailand|europe|switzerland|malaysia|almaty|japan/i.test(p.title);
 
             return {
               id: p.id,
@@ -134,7 +139,7 @@ function PackageGrid() {
     const dest = destinations.find((d) => d.id === pkg.destination_id);
     if (dest) return dest.category;
     const searchStr = (pkg.slug + ' ' + pkg.title).toLowerCase();
-    const intlKeywords = ['bali', 'vietnam', 'dubai', 'maldives', 'singapore', 'thailand', 'europe', 'switzerland', 'malaysia', 'international'];
+    const intlKeywords = ['bali', 'vietnam', 'dubai', 'maldives', 'singapore', 'thailand', 'europe', 'switzerland', 'malaysia', 'international', 'almaty', 'japan'];
     return intlKeywords.some(keyword => searchStr.includes(keyword)) ? 'international' : 'india';
   };
 
@@ -178,10 +183,14 @@ function PackageGrid() {
               </div>
               <div className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-8">
                 {[
-                  { title: "Rajasthan", nights: 5, days: 6, priceFrom: 22999, imageUrl: "https://images.unsplash.com/photo-1599661046289-e31897846e41", slug: "rajasthan" },
-                  { title: "Ladakh", nights: 6, days: 7, priceFrom: 28999, imageUrl: "https://images.unsplash.com/photo-1587595431973-160d0d94add1", slug: "ladakh" },
-                  { title: "Manali", nights: 4, days: 5, priceFrom: 15999, imageUrl: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23", slug: "manali" },
-                  { title: "Udaipur", nights: 3, days: 4, priceFrom: 13999, imageUrl: "https://images.unsplash.com/photo-1564507592333-c60657eea523", slug: "udaipur" }
+                  { title: "Divyadham", nights: 3, days: 4, priceFrom: "₹15,555/-*", imageUrl: brajImg, slug: "divyadham" },
+                  { title: "Jagannath Dham", nights: 3, days: 4, priceFrom: "₹14,999/-*", imageUrl: jagannathImg, slug: "jagannath-dham" },
+                  { title: "Brajyatra", nights: 3, days: 4, priceFrom: "₹15,555/-*", imageUrl: brajImg, slug: "brajyatra" },
+                  { title: "Ujjain", nights: 3, days: 4, priceFrom: "₹12,999/-*", imageUrl: ujjainImg, slug: "ujjain" },
+                  { title: "Kedarnath", nights: 3, days: 4, priceFrom: "₹15,999/-*", imageUrl: dodhamImg, slug: "kedarnath" },
+                  { title: "Do Dham Yatra", subtitle: "(Kedarnath & Badrinath)", nights: 4, days: 5, priceFrom: "₹22,999/-*", imageUrl: dodhamImg, slug: "do-dham" },
+                  { title: "Badrinath", nights: 3, days: 4, priceFrom: "₹15,999/-*", imageUrl: dodhamImg, slug: "badrinath" },
+                  { title: "Char Dham Yatra", subtitle: "(Kedarnath, Badrinath, Yamunotri & Gangotri)", nights: 9, days: 10, priceFrom: "₹29,999/-*", imageUrl: jagannathImg, slug: "char-dham" }
                 ].map((pkg, idx) => (
                   <motion.div
                     key={idx}
@@ -193,6 +202,7 @@ function PackageGrid() {
                   >
                     <PackageCard
                       title={pkg.title}
+                      subtitle={pkg.subtitle}
                       nights={pkg.nights}
                       days={pkg.days}
                       priceFrom={pkg.priceFrom}

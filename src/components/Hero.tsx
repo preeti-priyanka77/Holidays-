@@ -1,28 +1,27 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { ChevronRight, CheckCircle2, Loader2 } from 'lucide-react';
-import emailjs from 'emailjs-com';
 
 const SLIDES = [
   {
     id: 1,
     title: "Bali – Sunset over serene shorelines",
     subtitle: "Explore Bali",
-    price: "6N/7D starting at ₹42,000",
+    price: "4N/5D starting at ₹79,999",
     image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80"
   },
   {
     id: 2,
     title: "Maldives – Luxury over-water villas",
     subtitle: "Explore Maldives",
-    price: "4N/5D starting at ₹85,000",
+    price: "3N/4D starting at ₹74,999",
     image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1920&q=80"
   },
   {
     id: 3,
     title: "Kashmir – The Heaven on Earth",
     subtitle: "Explore Kashmir",
-    price: "5N/6D starting at ₹24,500",
+    price: "4N/5D starting at ₹24,999",
     image: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=1920&q=80"
   }
 ];
@@ -31,6 +30,7 @@ function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   const [formData, setFormData] = useState({
@@ -57,29 +57,33 @@ function Hero() {
     setIsSubmitting(true);
 
     try {
-      // Note: User needs to replace these with their actual EmailJS credentials
-      await emailjs.send(
-        'service_default', // Service ID
-        'template_default', // Template ID
-        {
-          from_name: formData.name,
-          to_name: 'Eleqt Holidays',
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${API_URL}/api/send-email`, {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
           destination: formData.destination,
           phone: `${formData.region} ${formData.phone}`,
           email: formData.email,
-          message: `New enquiry for ${formData.destination}`
-        },
-        'user_placeholder_key' // Public Key
-      );
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send enquiry');
+      }
 
       setIsSuccess(true);
       setFormData({ name: '', destination: '', phone: '', email: '', region: 'IN +91' });
+      setErrorMessage(null);
       setTimeout(() => setIsSuccess(false), 5000);
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      // Fallback for demo purposes if keys aren't set
-      setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 5000);
+      console.error('Submission Error:', error);
+      setErrorMessage('Unable to send enquiry. Please try again or contact us directly.');
+      setTimeout(() => setErrorMessage(null), 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -205,6 +209,13 @@ function Hero() {
               <h3 className="text-[#333] text-2xl font-bold leading-tight mb-8">
                 Let’s design your next escape, together.
               </h3>
+
+              {errorMessage && (
+                <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
 
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                 <div className="relative">

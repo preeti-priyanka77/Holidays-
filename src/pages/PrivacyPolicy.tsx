@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
+
 
 const SECTIONS = [
   { id: 'introduction', title: 'Introduction' },
@@ -50,7 +50,7 @@ function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+
 
       {/* Hero Section */}
       <div className="pt-32 pb-16 bg-neutral-50 border-b border-gray-100">

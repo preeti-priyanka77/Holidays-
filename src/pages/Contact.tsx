@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -18,8 +16,6 @@ function Contact() {
 
   return (
     <div className="min-h-screen bg-[#f8f5f0]">
-      <Navbar />
-      
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -149,7 +145,6 @@ function Contact() {
           </div>
         </div>
       </motion.div>
-      {/* <Footer /> */}
     </div>
   );
 }

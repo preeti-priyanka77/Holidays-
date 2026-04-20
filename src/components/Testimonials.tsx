@@ -4,13 +4,13 @@ import { Quote } from 'lucide-react';
 const TESTIMONIALS = [
   {
     rating: "5.0",
-    text: "My trip to Thailand with CheckIn Vacations was incredibly smooth. The cab services were always on time and the drivers were very courteous. Their constant assistance throughout the journey made the entire experience completely hassle-free.",
-    name: "Mr. Amit Tiwari"
+    text: "Our CharDham Yatra with Eleqt was an unforgettable spiritual journey made effortless by their excellent service. From well-organized transportation to punctual and polite drivers, every aspect was handled with great care. Their continuous support throughout the trip ensured a smooth and worry-free experience, allowing us to focus entirely on the journey. It's truly a seamless and enriching pilgrimage experience.",
+    name: "Mrs. Dipti Mayee Tripathy"
   },
   {
     rating: "5.0",
-    text: "Kerala was a beautiful experience, made even better by CheckIn Vacations. The hotel stay was comfortable with excellent service and views. The team handled every request with care and ensured a pleasant, memorable holiday.",
-    name: "Ms. Diksha Maheshwari"
+    text: "I recently completed a spiritually enriching journey covering Nilamadhab Kantilo, Vaishno Devi Nayagarh, and Ayodhya Ram Mandir (Fategarh), and I must appreciate the outstanding service provided by Eleqt.The entire trip was seamless; right from punctual pickup to safe and comfortable travel across destinations. The driver was professional, courteous, and well-aware of temple routes, ensuring smooth darshan without unnecessary delays.ed for anyone planning pilgrimage tours or long-distance spiritual travel in Odisha and beyond.",
+    name: "Dr. Satya Sundar Brahmachari(Astrologer & Gen AI Founder)"
   },
   {
     rating: "4.5",

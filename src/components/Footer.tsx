@@ -44,16 +44,18 @@ function Footer() {
             Discover curated holiday experiences tailored for you
           </motion.h2>
 
-          <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(180,140,80,0.5)" }}
-            className="bg-white text-neutral-900 px-10 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 mb-12 group"
-          >
-            Start Your Journey
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-          </motion.button>
+          <Link to="/#enquiry-form">
+            <motion.button
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(180,140,80,0.5)" }}
+              className="bg-white text-neutral-900 px-10 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 mb-12 group"
+            >
+              Start Your Journey
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </motion.button>
+          </Link>
 
           {/* 📞 FLOATING CONTACT CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
