@@ -14,8 +14,8 @@ const TESTIMONIALS = [
   },
   {
     rating: "4.5",
-    text: "The sightseeing in Dubai was perfectly planned and covered at a comfortable pace. Every attraction was well-coordinated, and the CheckIn Vacations team stayed connected throughout, making the trip fantastic and stress-free.",
-    name: "Mr. Jitendra Singh"
+    text: "Our recent trip to Hong Kong & China with Eleqt was handled exceptionally well. What makes it even more impressive is that the entire trip was arranged seamlessly within just 48 hours. From timely cab arrangements to the on-ground support, every detail was managed with precision and care. What truly stood out was the constant support and coordination throughout the journey, ensuring everything remained smooth and stress-free. Despite a tight schedule, the experience felt seamless and well-organized, allowing us to focus entirely on our work commitments. Eleqt’s attention to detail and reliability made a significant difference. Overall, it was a comfortable, efficient, and hassle-free travel experience. We would definitely recommend Eleqt to anyone looking for well-managed and dependable travel services.",
+    name: "Mr. Bibekananda Jena (Entrepreneur)"
   }
 ];
 

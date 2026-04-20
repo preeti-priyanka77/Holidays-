@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 const SECTIONS = [
@@ -312,12 +313,12 @@ function PrivacyPolicy() {
                   <h4 className="text-2xl font-bold mb-3 tracking-tight">Privacy Concierge</h4>
                   <p className="text-gray-400 font-light text-lg">Have questions about your data? Our team is dedicated to your security.</p>
                 </div>
-                <a
-                  href="mailto:privacy@eleqt.com"
+                <Link
+                  to="/#enquiry-form"
                   className="bg-white text-gray-900 px-10 py-4 rounded-full font-black uppercase text-[12px] tracking-[0.2em] hover:bg-amber-600 hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-xl"
                 >
                   Contact Security Team
-                </a>
+                </Link>
               </div>
             </div>
 

@@ -135,6 +135,7 @@ function Footer() {
                   { name: 'Privacy Policy', path: '/privacy-policy' },
                   { name: 'Terms of Use', path: '/terms-of-use' },
                   { name: 'Guest Policy', path: '/guest-policy' },
+                  { name: 'Eleqt Mobility', path: 'https://eleqt.in/' },
                 ].map((link) => (
                   <Link
                     key={link.name}

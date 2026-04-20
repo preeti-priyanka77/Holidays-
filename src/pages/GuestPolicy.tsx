@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const SECTIONS = [
     { id: 'conduct', title: '1. General Conduct' },
@@ -85,9 +86,11 @@ function GuestPolicy() {
                         <div className="mt-16 p-8 bg-gray-50 border border-gray-100 rounded-none text-center">
                             <p className="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-3">Questions?</p>
                             <p className="text-xs text-gray-500 font-medium leading-relaxed mb-6">For detailed inquiries regarding hotel protocols or special requests, please contact us.</p>
-                            <button className="w-full py-3 bg-gray-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 transition-colors rounded-none">
-                                Support Concierge
-                            </button>
+                            <Link to="/#enquiry-form">
+                                <button className="w-full py-3 bg-gray-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 transition-colors rounded-none">
+                                    Support Concierge
+                                </button>
+                            </Link>
                         </div>
                     </aside>
 
@@ -120,7 +123,7 @@ function GuestPolicy() {
                                 <div className="w-12 h-0.5 bg-amber-500/30" />
                                 <div className="space-y-4">
                                     <p className="text-gray-600 leading-relaxed text-base font-medium">
-                                        As per government regulations, valid government-issued photo identification (Aadhar Card, Passport, or Driving License) is mandatory for all guests at the time of check-in. Foreign nationals must provide a valid Passport and Visa.
+                                        As per government regulations, valid government-issued photo identification (Aadhar Card, PAN Card, Passport, or Driving License) is mandatory for all guests at the time of check-in. Foreign nationals must provide a valid Passport and Visa.
                                     </p>
                                     <p className="text-gray-600 leading-relaxed text-base font-medium">
                                         Standard check-in time is 2:00 PM and check-out is 11:00 AM, subject to specific hotel and destination policies.

@@ -260,9 +260,23 @@ function Hero() {
                       onChange={handleInputChange}
                       className="w-full bg-white border border-gray-300 px-4 py-2 text-gray-900 focus:outline-none focus:border-amber-600 rounded-none appearance-none text-base"
                     >
-                      <option>IN +91</option>
-                      <option>US +1</option>
-                      <option>UK +44</option>
+                      <option>+91</option>
+                      <option>+1</option>
+                      <option>+44</option>
+                      <option>+61</option>
+                      <option>+60</option>
+                      <option>+94</option>
+                      <option>+49</option>
+                      <option>+33</option>
+                      <option>+65</option>
+                      <option>+880</option>
+                      <option>+966</option>
+                      <option>+971</option>
+                      <option>+965</option>
+                      <option>+974</option>
+                      <option>+968</option>
+                      <option>+973</option>
+                      <option>+7</option>
                     </select>
                   </div>
                   <div className="relative flex-1">
@@ -355,12 +369,19 @@ function Hero() {
                     onChange={handleInputChange}
                     className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-gray-900 focus:outline-none focus:border-amber-600 transition-all appearance-none"
                   >
+
+                    
                     <option value="">Choose Destination</option>
-                    <option value="bali">Bali</option>
-                    <option value="maldives">Maldives</option>
-                    <option value="kashmir">Kashmir</option>
                     <option value="international">International</option>
                     <option value="india">India</option>
+                    <option value="bali">Pilgrimage</option>
+                    <option value="maldives">Honeymoon</option>
+                    <option value="kashmir">Adventure</option>
+                    <option value="international">Backpacking</option>
+                    <option value="india">Beach Vacation</option>
+                    <option value="india">Heritage</option>
+                    <option value="india">Corporate</option>
+                
                   </select>
                 </div>
 
@@ -376,6 +397,20 @@ function Hero() {
                       <option>+91</option>
                       <option>+1</option>
                       <option>+44</option>
+                      <option>+61</option>
+                      <option>+60</option>
+                      <option>+94</option>
+                      <option>+49</option>
+                      <option>+33</option>
+                      <option>+65</option>
+                      <option>+880</option>
+                      <option>+966</option>
+                      <option>+971</option>
+                      <option>+965</option>
+                      <option>+974</option>
+                      <option>+968</option>
+                      <option>+973</option>
+                      <option>+7</option>
                     </select>
                   </div>
                   <div className="col-span-2 space-y-1">
