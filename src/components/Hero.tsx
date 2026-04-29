@@ -239,11 +239,13 @@ function Hero() {
                     className="w-full bg-white border border-gray-300 px-5 py-2 text-gray-900 focus:outline-none focus:border-amber-600 rounded-none transition-all appearance-none text-base cursor-pointer"
                   >
                     <option value="">Destinations</option>
-                    <option value="bali">Bali</option>
-                    <option value="maldives">Maldives</option>
-                    <option value="kashmir">Kashmir</option>
-                    <option value="international">International</option>
-                    <option value="india">India</option>
+                    <option value="pilgrimage">Pilgrimage</option>
+                    <option value="honeymoon">Honeymoon</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="backpacking">Backpacking</option>
+                    <option value="beach">Beach Vacation</option>
+                    <option value="heritage">Heritage</option>
+                    <option value="corporate">Corporate</option>
                   </select>
                   <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
                     <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -373,13 +375,13 @@ function Hero() {
                       <option value="">Choose Destination</option>
                       <option value="international">International</option>
                       <option value="india">India</option>
-                      <option value="bali">Pilgrimage</option>
-                      <option value="maldives">Honeymoon</option>
-                      <option value="kashmir">Adventure</option>
-                      <option value="international">Backpacking</option>
-                      <option value="india">Beach Vacation</option>
-                      <option value="india">Heritage</option>
-                      <option value="india">Corporate</option>
+                      <option value="pilgrimage">Pilgrimage</option>
+                      <option value="honeymoon">Honeymoon</option>
+                      <option value="adventure">Adventure</option>
+                      <option value="backpacking">Backpacking</option>
+                      <option value="beach">Beach Vacation</option>
+                      <option value="heritage">Heritage</option>
+                      <option value="corporate">Corporate</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                       <ChevronDown size={18} />
@@ -390,30 +392,35 @@ function Hero() {
                 <div className="grid grid-cols-3 gap-3">
                   <div className="col-span-1 space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Code</label>
-                    <select
-                      name="region"
-                      value={formData.region}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-50 border border-gray-200 px-3 py-3 text-gray-900 focus:outline-none appearance-none"
-                    >
-                      <option>+91</option>
-                      <option>+1</option>
-                      <option>+44</option>
-                      <option>+61</option>
-                      <option>+60</option>
-                      <option>+94</option>
-                      <option>+49</option>
-                      <option>+33</option>
-                      <option>+65</option>
-                      <option>+880</option>
-                      <option>+966</option>
-                      <option>+971</option>
-                      <option>+965</option>
-                      <option>+974</option>
-                      <option>+968</option>
-                      <option>+973</option>
-                      <option>+7</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        name="region"
+                        value={formData.region}
+                        onChange={handleInputChange}
+                        className="w-full bg-gray-50 border border-gray-200 px-3 py-3 pr-8 text-gray-900 focus:outline-none appearance-none cursor-pointer"
+                      >
+                        <option>+91</option>
+                        <option>+1</option>
+                        <option>+44</option>
+                        <option>+61</option>
+                        <option>+60</option>
+                        <option>+94</option>
+                        <option>+49</option>
+                        <option>+33</option>
+                        <option>+65</option>
+                        <option>+880</option>
+                        <option>+966</option>
+                        <option>+971</option>
+                        <option>+965</option>
+                        <option>+974</option>
+                        <option>+968</option>
+                        <option>+973</option>
+                        <option>+7</option>
+                      </select>
+                      <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                        <ChevronDown size={14} />
+                      </div>
+                    </div>
                   </div>
                   <div className="col-span-2 space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Mobile</label>
