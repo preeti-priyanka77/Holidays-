@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import { ChevronRight, CheckCircle2, Loader2 } from 'lucide-react';
+import { ChevronRight, ChevronDown, CheckCircle2, Loader2 } from 'lucide-react';
 
 const SLIDES = [
   {
@@ -362,27 +362,29 @@ function Hero() {
 
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Destination</label>
-                  <select
-                    required
-                    name="destination"
-                    value={formData.destination}
-                    onChange={handleInputChange}
-                    className="w-full bg-gray-50 border border-gray-200 px-4 py-3 text-gray-900 focus:outline-none focus:border-amber-600 transition-all appearance-none"
-                  >
-
-                    
-                    <option value="">Choose Destination</option>
-                    <option value="international">International</option>
-                    <option value="india">India</option>
-                    <option value="bali">Pilgrimage</option>
-                    <option value="maldives">Honeymoon</option>
-                    <option value="kashmir">Adventure</option>
-                    <option value="international">Backpacking</option>
-                    <option value="india">Beach Vacation</option>
-                    <option value="india">Heritage</option>
-                    <option value="india">Corporate</option>
-                
-                  </select>
+                  <div className="relative">
+                    <select
+                      required
+                      name="destination"
+                      value={formData.destination}
+                      onChange={handleInputChange}
+                      className="w-full bg-gray-50 border border-gray-200 px-4 py-3 pr-10 text-gray-900 focus:outline-none focus:border-amber-600 transition-all appearance-none cursor-pointer"
+                    >
+                      <option value="">Choose Destination</option>
+                      <option value="international">International</option>
+                      <option value="india">India</option>
+                      <option value="bali">Pilgrimage</option>
+                      <option value="maldives">Honeymoon</option>
+                      <option value="kashmir">Adventure</option>
+                      <option value="international">Backpacking</option>
+                      <option value="india">Beach Vacation</option>
+                      <option value="india">Heritage</option>
+                      <option value="india">Corporate</option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                      <ChevronDown size={18} />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3">
