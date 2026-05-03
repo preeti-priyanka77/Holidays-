@@ -20,6 +20,12 @@ const EXPERIENCE_ITEMS = [
   { icon: Map, title: "Curated Discovery", desc: "Thoughtfully designed moments across the globe." }
 ];
 
+const STATS = [
+  { value: "199+", label: "Exquisite Destinations" },
+  { value: "100+", label: "Happy Travelers" },
+  { value: "149+", label: "Expert Guides" }
+];
+
 function About() {
   const heroRef = useRef(null);
   const stripRef = useRef(null);
@@ -207,25 +213,49 @@ function About() {
       {/* 6. CLOSING STORY */}
       <section className="py-8 md:py-24 px-4 md:px-6 bg-neutral-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#b08d57]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="max-w-3xl mx-auto text-center space-y-12">
-          <motion.div {...fadeInUp}>
-            <p className="text-xl md:text-2xl text-neutral-700 font-light leading-relaxed">
-              Whether it’s a romantic escape, a soulful retreat, an international getaway, or an adventure-filled holiday, Eleqt transforms travel into a refined and memorable experience - where every detail is considered, and every journey feels truly yours.
-            </p>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <motion.div {...fadeInUp}>
+              <p className="text-xl md:text-2xl text-neutral-700 font-light leading-relaxed">
+                Whether it’s a romantic escape, a soulful retreat, an international getaway, or an adventure-filled holiday, Eleqt transforms travel into a refined and memorable experience - where every detail is considered, and every journey feels truly yours.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* 5.5 STATISTICS SECTION */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible pb-8 md:pb-0 scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-4 md:px-0">
+              {STATS.map((stat, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: idx * 0.1, ease }}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex-shrink-0 w-[70%] max-w-[240px] md:w-full bg-white rounded-lg shadow-sm border border-neutral-100 p-6 md:p-8 text-center transition-transform duration-300"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-[#b08d57]">{stat.value}</div>
+                  <p className="text-sm text-gray-600 mt-2 uppercase tracking-widest font-medium">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3, ease }}
-            className="pt-12 border-t border-neutral-200 flex flex-col items-center"
-          >
-            <p className="text-2xl md:text-3xl text-[#b08d57] font-serif italic mb-8">
-              Because every journey has a story - we help you tell it beautifully.
-            </p>
-            <div className="w-16 h-1 bg-[#b08d57]/20 rounded-full" />
-          </motion.div>
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3, ease }}
+              className="pt-12 border-t border-neutral-200 flex flex-col items-center"
+            >
+              <p className="text-2xl md:text-3xl text-[#b08d57] font-serif italic mb-8">
+                Because every journey has a story - we help you tell it beautifully.
+              </p>
+              <div className="w-16 h-1 bg-[#b08d57]/20 rounded-full" />
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -324,7 +324,7 @@ function PrivacyPolicy() {
 
             <div className="mt-16 text-center">
               <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em]">
-                © 2026 ELEQT HOLIDAYS & LEISURE •  M/S PSYNUXSOFTWARE PVT LTD
+                2026 © ELEQT HOLIDAYS & LEISURE • M/S PSYNUXSOFTWARE PVT LTD
               </p>
             </div>
           </main>

@@ -104,7 +104,7 @@ function Navbar() {
                 <div className="flex flex-col gap-6">
                   {[
                     { name: 'Home', path: '/' },
-                    { name: 'About Us', path: '/about' },
+                    { name: 'About Us', path: '/about' }
                   
                   ].map((link) => (
                     <Link 
