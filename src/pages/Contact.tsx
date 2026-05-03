@@ -20,10 +20,10 @@ function Contact() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="pt-32 pb-24"
+        className="pt-20 md:pt-32 pb-12 md:pb-24"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-start">
             
             {/* Left Column: Contact Info */}
             <div className="space-y-12">
@@ -35,7 +35,7 @@ function Contact() {
                 <p className="text-[11px] font-bold tracking-[0.5em] text-[#b08d57] uppercase mb-4">
                   GET IN TOUCH
                 </p>
-                <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter mb-8 leading-[1.1]">
+                <h1 className="text-3xl md:text-7xl font-bold text-gray-900 tracking-tighter mb-6 md:mb-8 leading-[1.1]">
                   Let’s design your <br />
                   <span className="text-[#b08d57] italic font-medium">next escape</span>
                 </h1>
@@ -94,11 +94,11 @@ function Contact() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 }}
-              className="bg-white p-10 md:p-14 shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-[#e5e1da] rounded-none"
+              className="bg-white p-6 md:p-14 shadow-[0_30px_60px_rgba(0,0,0,0.05)] border border-[#e5e1da] rounded-none"
             >
-              <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-10">Send a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-8 md:mb-10">Send a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-[#b08d57] ml-1">Full Name</label>
                     <input 

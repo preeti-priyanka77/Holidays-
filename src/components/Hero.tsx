@@ -97,7 +97,7 @@ function Hero() {
   return (
     <div id="enquiry-form" className="relative w-full overflow-hidden bg-white">
       {/* Hero Content Section */}
-      <div className="relative h-[80vh] md:h-screen w-full overflow-hidden">
+      <div className="relative h-[70vh] md:h-screen w-full overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -121,7 +121,7 @@ function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-20 h-full w-full max-w-7xl mx-auto px-6 md:px-10 flex items-center">
+        <div className="relative z-20 h-full w-full max-w-7xl mx-auto px-4 md:px-10 flex items-center">
           <div className="w-full lg:w-3/5">
             <AnimatePresence mode="wait">
               <motion.div
@@ -140,7 +140,7 @@ function Hero() {
                     visible: { opacity: 0.8, y: 0 },
                     hidden: { opacity: 0, y: 20 }
                   }}
-                  className="text-[12px] md:text-sm font-bold uppercase tracking-[0.4em] mb-4 text-amber-500"
+                  className="text-[10px] md:text-sm font-bold uppercase tracking-[0.4em] mb-2 md:mb-4 text-amber-500"
                 >
                   {SLIDES[currentSlide].subtitle}
                 </motion.h2>
@@ -149,7 +149,7 @@ function Hero() {
                     visible: { opacity: 1, y: 0 },
                     hidden: { opacity: 0, y: 40 }
                   }}
-                  className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tighter max-w-2xl"
+                  className="text-2xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-8 leading-[1.1] tracking-tighter max-w-2xl"
                 >
                   {SLIDES[currentSlide].title}
                 </motion.h1>
@@ -159,7 +159,7 @@ function Hero() {
                     visible: { opacity: 1, scale: 1 },
                     hidden: { opacity: 0, scale: 0.9 }
                   }}
-                  className="inline-flex flex-col md:flex-row items-start md:items-center gap-6 backdrop-blur-xl bg-white/10 border border-white/20 rounded-none p-6 md:p-8 shadow-2xl"
+                  className="inline-flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 backdrop-blur-xl bg-white/10 border border-white/20 rounded-none p-4 md:p-8 shadow-2xl"
                 >
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-white/60 mb-1">Pricing Plan</p>
@@ -335,7 +335,7 @@ function Hero() {
       </div>
 
       {/* Mobile Form Section - Restored and Repositioned */}
-      <div id="form-section-mobile" className="lg:hidden w-full bg-[#f8f5f0] px-6 py-16">
+      <div id="form-section-mobile" className="lg:hidden w-full bg-[#f8f5f0] px-4 py-8">
         <div className="max-w-md mx-auto">
           {isSuccess ? (
             <div className="flex flex-col items-center justify-center py-10 text-center">
@@ -348,7 +348,7 @@ function Hero() {
               <h3 className="hidden md:block text-2xl font-bold mb-2 text-gray-900">Let’s design your next escape</h3>
               <p className="hidden md:block text-gray-500 text-sm mb-8 italic">Our travel experts will help you plan your perfect journey.</p>
 
-              <form onSubmit={handleSubmit} className="space-y-5 bg-white p-8 shadow-xl border border-gray-100">
+              <form onSubmit={handleSubmit} className="space-y-3 bg-white p-4 md:p-8 shadow-xl border border-gray-100">
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-1">Full Name</label>
                   <input

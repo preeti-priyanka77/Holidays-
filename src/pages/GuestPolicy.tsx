@@ -57,7 +57,7 @@ function GuestPolicy() {
                         <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter mb-4">
                             Guest Policy
                         </h1>
-                        <p className="text-gray-400 font-medium text-lg">Guiding Your Premium Travel Experience • Last Updated: April 06, 2026</p>
+                        <p className="text-gray-400 font-medium text-lg">Guiding Your Premium Travel Experience • Last Updated: April 01, 2026</p>
                     </motion.div>
                 </div>
             </div>

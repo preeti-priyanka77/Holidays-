@@ -96,8 +96,8 @@ function PackageDetail() {
 
             {/* 🔝 TOP NAVIGATION TABS */}
             <div className="bg-white border-b border-gray-100  sticky top-0 z-[60] shadow-sm">
-               <div className="max-w-[1200px] mx-auto px-6">
-                  <div className="flex gap-8 overflow-x-auto no-scrollbar">
+               <div className="max-w-[1200px] mx-auto px-4 md:px-6">
+                  <div className="flex gap-4 md:gap-8 overflow-x-auto no-scrollbar">
                      {navTabs.map((tab) => (
                         <button
                            key={tab}
@@ -105,7 +105,7 @@ function PackageDetail() {
                               setActiveTab(tab);
                               const element = document.getElementById(tab.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'));
                               if (element) {
-                                 const offset = 100;
+                                 const offset = 80;
                                  const bodyRect = document.body.getBoundingClientRect().top;
                                  const elementRect = element.getBoundingClientRect().top;
                                  const elementPosition = elementRect - bodyRect;
@@ -117,7 +117,7 @@ function PackageDetail() {
                                  });
                               }
                            }}
-                           className={`py-4 text-[14px] font-medium whitespace-nowrap relative transition-all ${activeTab === tab ? 'text-[#ff4d6d] font-semibold' : 'text-gray-500 hover:text-gray-900'
+                           className={`py-3 md:py-4 text-[13px] md:text-[14px] font-medium whitespace-nowrap relative transition-all ${activeTab === tab ? 'text-[#ff4d6d] font-semibold' : 'text-gray-500 hover:text-gray-900'
                               }`}
                         >
                            {tab}
@@ -133,15 +133,15 @@ function PackageDetail() {
                </div>
             </div>
 
-            <div className="max-w-[1200px] mx-auto px-4 md:px-6 pt-6 pb-24">
-               <div className="flex flex-col lg:flex-row gap-6 items-start">
+            <div className="max-w-[1200px] mx-auto px-4 md:px-6 pt-4 md:pt-6 pb-16 md:pb-24">
+               <div className="flex flex-col lg:flex-row gap-4 md:gap-6 items-start">
 
                   {/* 70% LEFT COLUMN */}
-                  <div className="lg:w-[68%] w-full space-y-8">
+                  <div className="lg:w-[68%] w-full space-y-4 md:space-y-8">
 
                      {/* 📸 HERO SECTION */}
-                     <section id="overview" className="space-y-4">
-                        <div className="relative rounded-[20px] overflow-hidden shadow-md group h-[340px] md:h-[450px] bg-gray-50">
+                     <section id="overview" className="space-y-3 md:space-y-4">
+                        <div className="relative rounded-[20px] overflow-hidden shadow-md group h-[280px] md:h-[450px] bg-gray-50">
                            <AnimatePresence mode="wait">
                               <motion.img
                                  key={currentImg}
@@ -174,7 +174,7 @@ function PackageDetail() {
                                  <span className="bg-gray-100 text-gray-600 text-[11px] font-bold px-3 py-1 rounded-full">{pkg.nights} Nights / {pkg.days} Days</span>
                                  <span className="bg-gray-100 text-gray-600 text-[11px] font-bold px-3 py-1 rounded-full">Fully Customisable</span>
                               </div>
-                              <h1 className="text-[28px] md:text-[32px] font-bold text-[#333] leading-[1.1] tracking-tight line-clamp-2">
+                              <h1 className="text-[22px] md:text-[32px] font-bold text-[#333] leading-[1.1] tracking-tight line-clamp-2">
                                  {pkg.title}
                               </h1>
                               <p className="text-[14px] font-medium text-gray-500">
@@ -210,8 +210,8 @@ function PackageDetail() {
                      </section>
 
                      {/* 📋 ITINERARY */}
-                     <section id="itinerary" className="space-y-6">
-                        <h2 className="text-[22px] font-bold text-[#333]">Detailed Itinerary</h2>
+                     <section id="itinerary" className="space-y-4 md:space-y-6">
+                        <h2 className="text-[20px] md:text-[22px] font-bold text-[#333]">Detailed Itinerary</h2>
                         <div className="space-y-4">
                            {pkg.itinerary.map((day, idx) => (
                               <div
@@ -269,8 +269,8 @@ function PackageDetail() {
                      </section>
 
                      {/* 🏨 STAY & MEALS */}
-                     <section id="stay-&-meals" className="space-y-6 pt-4">
-                        <h2 className="text-[22px] font-bold text-[#333]">Accommodation Details</h2>
+                     <section id="stay-&-meals" className="space-y-4 md:space-y-6 pt-2 md:pt-4">
+                        <h2 className="text-[20px] md:text-[22px] font-bold text-[#333]">Accommodation Details</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                            {[
                               { city: 'Delhi', nights: 2, hotel: 'Hotel Star Palace or Similar', stars: 2, meals: 'No Meals Included' },

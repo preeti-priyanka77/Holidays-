@@ -23,7 +23,7 @@ function PackageCard({ title, subtitle, nights, days, priceFrom, imageUrl }: Pac
       className="block h-full w-full cursor-pointer transition-transform duration-300 active:scale-[0.98]"
     >
       <motion.div
-        className="relative h-[500px] md:h-[580px] w-full overflow-hidden group bg-neutral-900 rounded-none shadow-2xl transition-all duration-500"
+        className="relative h-[400px] md:h-[580px] w-full overflow-hidden group bg-neutral-900 rounded-none shadow-2xl transition-all duration-500"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         whileHover={{ y: -10 }}
@@ -44,7 +44,7 @@ function PackageCard({ title, subtitle, nights, days, priceFrom, imageUrl }: Pac
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10" />
 
         {/* Content Container */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-between py-12 px-8 text-center">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-between py-8 px-6 md:py-12 md:px-8 text-center">
 
           {/* Top Label */}
           <div className="space-y-4 w-full">
@@ -62,7 +62,7 @@ function PackageCard({ title, subtitle, nights, days, priceFrom, imageUrl }: Pac
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter mb-2 transition-all duration-500 group-hover:scale-105"
+                className="text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter mb-2 transition-all duration-500 group-hover:scale-105"
               >
                 {title}
               </motion.h3>
@@ -92,7 +92,7 @@ function PackageCard({ title, subtitle, nights, days, priceFrom, imageUrl }: Pac
           <div className="flex flex-col items-center w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
             <div className="mb-4">
               <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Pricing Starts At</p>
-              <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <p className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
                 {typeof priceFrom === 'number' ? `₹${priceFrom.toLocaleString()}` : priceFrom}
               </p>
             </div>

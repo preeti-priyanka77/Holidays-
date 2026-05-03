@@ -314,7 +314,7 @@ function PrivacyPolicy() {
                   <p className="text-gray-400 font-light text-lg">Have questions about your data? Our team is dedicated to your security.</p>
                 </div>
                 <Link
-                  to="/#enquiry-form"
+                  to="/contact"
                   className="bg-white text-gray-900 px-10 py-4 rounded-full font-black uppercase text-[12px] tracking-[0.2em] hover:bg-amber-600 hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-xl"
                 >
                   Contact Security Team
@@ -324,7 +324,7 @@ function PrivacyPolicy() {
 
             <div className="mt-16 text-center">
               <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em]">
-                © 2026 ELEQT HOLIDAYS & LEISURE • OPERATED BY M/S PSYNUXSOFTWARE PVT LTD
+                © 2026 ELEQT HOLIDAYS & LEISURE •  M/S PSYNUXSOFTWARE PVT LTD
               </p>
             </div>
           </main>

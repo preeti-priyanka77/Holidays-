@@ -42,10 +42,10 @@ const CURATED_SERVICES = [
 
 function Brands() {
   return (
-    <section className="py-32 bg-[#fafaf9]">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section className="py-10 md:py-32 bg-[#fafaf9]">
+      <div className="max-w-7xl mx-auto px-4 md:px-10">
         <motion.div
-          className="mb-16 md:mb-24 text-center"
+          className="mb-6 md:mb-24 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -53,16 +53,16 @@ function Brands() {
           <p className="text-[10px] md:text-[11px] font-bold tracking-[0.5em] text-[#b08d57] uppercase mb-4">
             OUR CURATED EXPERIENCES
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter max-w-3xl mx-auto text-balance">
+          <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter max-w-3xl mx-auto text-balance">
             Every detail, <span className="text-[#b08d57] italic font-medium">thoughtfully</span> designed for you
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="flex md:grid md:grid-cols-4 overflow-x-auto md:overflow-x-visible no-scrollbar gap-4 md:gap-6 scroll-smooth px-4 md:px-0">
           {CURATED_SERVICES.map((service, index) => (
             <motion.div
               key={index}
-              className="group relative cursor-pointer overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
+              className="group relative cursor-pointer overflow-hidden aspect-[4/5] sm:aspect-[3/4] flex-shrink-0 w-[75%] max-w-[280px] md:w-full md:max-w-none"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -81,7 +81,7 @@ function Brands() {
                 <div className="absolute inset-0 bg-[#b08d57]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
-              <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 sm:p-10">
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 sm:p-10">
                 <motion.div 
                   className="mb-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 text-white group-hover:bg-[#b08d57] group-hover:border-[#b08d57] transition-all duration-300"
                 >

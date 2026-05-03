@@ -42,8 +42,8 @@ function About() {
     <div className="min-h-screen bg-white selection:bg-[#b08d57] selection:text-white">
       
       {/* 1. HERO SECTION (Split Layout) */}
-      <section ref={heroRef} className="relative h-[80vh] flex flex-col lg:flex-row overflow-hidden pt-20 lg:pt-0">
-        <div className="w-full lg:w-1/2 flex items-center justify-center px-6 lg:px-20 bg-[#fdfcfb] z-10 py-12 lg:py-0">
+      <section ref={heroRef} className="relative h-auto lg:h-[80vh] flex flex-col lg:flex-row overflow-hidden pt-16 lg:pt-0">
+        <div className="w-full lg:w-1/2 flex items-center justify-center px-4 md:px-6 lg:px-20 bg-[#fdfcfb] z-10 py-8 lg:py-0">
           <motion.div 
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
@@ -51,7 +51,7 @@ function About() {
             className="max-w-xl"
           >
             <span className="text-[#b08d57] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Our Legacy</span>
-            <h1 className="text-5xl md:text-7xl font-serif text-neutral-900 leading-[1.1] mb-8">
+            <h1 className="text-3xl md:text-7xl font-serif text-neutral-900 leading-[1.1] mb-6 md:mb-8">
               About <span className="italic text-[#b08d57]">Us</span>
             </h1>
             <p className="text-lg md:text-xl text-neutral-600 leading-relaxed font-light">
@@ -73,8 +73,8 @@ function About() {
       </section>
 
       {/* 2. PHILOSOPHY (Story Flow - Right Image) */}
-      <section className="py-16 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+      <section className="py-8 md:py-24 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24">
           <div className="w-full md:w-1/2 space-y-8 order-2 md:order-1">
             <motion.div 
               initial={{ opacity: 0, x: -40 }}
@@ -112,9 +112,9 @@ function About() {
       </section>
 
       {/* 3. EXPERIENCE GRID (Highlight Section) */}
-      <section className="py-16 md:py-24 px-6 bg-[#f9f7f4]">
+      <section className="py-8 md:py-24 px-4 md:px-6 bg-[#f9f7f4]">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
+          <motion.div {...fadeInUp} className="text-center mb-10 md:mb-16">
             <span className="text-[#b08d57] font-bold tracking-widest uppercase text-xs mb-4 block">The Experience</span>
             <h2 className="text-3xl md:text-5xl font-serif text-neutral-900">Curated Moments</h2>
           </motion.div>
@@ -128,9 +128,9 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease }}
                 whileHover={{ y: -10 }}
-                className="bg-white p-10 group transition-all duration-500 hover:shadow-xl hover:shadow-neutral-200/50"
+                className="bg-white p-6 md:p-10 group transition-all duration-500 hover:shadow-xl hover:shadow-neutral-200/50"
               >
-                <div className="w-14 h-14 bg-neutral-50 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#b08d57] transition-colors duration-500">
+                <div className="w-14 h-14 bg-neutral-50 rounded-full flex items-center justify-center mb-6 md:mb-8 group-hover:bg-[#b08d57] transition-colors duration-500">
                   <item.icon className="w-6 h-6 text-[#b08d57] group-hover:text-white transition-colors duration-500" />
                 </div>
                 <h3 className="text-xl font-bold text-neutral-900 mb-4">{item.title}</h3>
@@ -166,8 +166,8 @@ function About() {
       </section>
 
       {/* 5. APPROACH (Story Flow - Left Image) */}
-      <section className="py-16 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+      <section className="py-8 md:py-24 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -205,7 +205,7 @@ function About() {
       </section>
 
       {/* 6. CLOSING STORY */}
-      <section className="py-16 md:py-24 px-6 bg-neutral-50 relative overflow-hidden">
+      <section className="py-8 md:py-24 px-4 md:px-6 bg-neutral-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#b08d57]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-3xl mx-auto text-center space-y-12">
           <motion.div {...fadeInUp}>

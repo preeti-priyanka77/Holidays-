@@ -103,9 +103,9 @@ function Footer() {
       </section>
 
       {/* 🌙 FOOTER (CLEAN + PREMIUM) */}
-      <section className="bg-[#0f0f0f] text-white pt-20 pb-12 px-6">
+      <section className="bg-[#0f0f0f] text-white pt-10 md:pt-20 pb-8 md:pb-12 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 items-start">
 
             {/* LEFT: Logo / Brand Info */}
             <motion.div
@@ -178,7 +178,7 @@ function Footer() {
           </div>
 
           {/* BOTTOM STRIP */}
-          <div className="mt-20 pt-8 border-t border-white/5 text-center">
+          <div className="mt-10 md:mt-20 pt-4 md:pt-8 border-t border-white/5 text-center">
             <p className="text-[10px] md:text-xs text-white/30 tracking-[0.3em] uppercase">
               2025-2026 © Eleqt Holidays & Leisure | Psynuxsoftware Pvt Ltd. All Rights Reserved.
             </p>

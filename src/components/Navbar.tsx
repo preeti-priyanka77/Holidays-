@@ -29,11 +29,11 @@ function Navbar() {
         : 'bg-white/40 backdrop-blur-sm py-2'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between">
 
         {/* Left: Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={Holidays} alt="logo" className='w-20 md:w-52 h-[70px] transition-transform duration-300' />
+          <img src={Holidays} alt="logo" className='w-16 md:w-52 h-auto md:h-[70px] transition-transform duration-300' />
         </Link>
 
         {/* Right: Contact & Support */}

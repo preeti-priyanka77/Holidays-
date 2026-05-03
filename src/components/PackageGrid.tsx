@@ -30,26 +30,26 @@ function PackageSlider({ title, packages, destinations }: { title: string, packa
   if (!packages || packages.length === 0) return null;
 
   return (
-    <section className="py-16 w-full">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section className="py-8 md:py-16 w-full">
+      <div className="max-w-7xl mx-auto px-4 md:px-10">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-6 md:mb-12"
         >
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tighter">
+            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 tracking-tighter">
               {title}
             </h2>
-            <div className="w-16 h-1.5 bg-amber-500 mt-4 rounded-none" />
+            <div className="w-16 h-1.5 bg-amber-500 mt-2 md:mt-4 rounded-none" />
           </div>
          
         </motion.div>
 
         <div className="relative w-full">
           <div
-            className="flex overflow-x-auto gap-6 md:gap-8 pb-8 no-scrollbar scroll-smooth"
+            className="flex overflow-x-auto gap-3 md:gap-8 pb-8 no-scrollbar scroll-smooth px-4 md:px-0"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -58,7 +58,7 @@ function PackageSlider({ title, packages, destinations }: { title: string, packa
             {packages.map((pkg, idx) => (
               <motion.div
                 key={pkg.id}
-                className="flex-none w-[280px] md:w-[380px]"
+                className="flex-none w-[75%] max-w-[280px] md:w-[380px]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -147,9 +147,9 @@ function PackageGrid() {
   const internationalPackages = packages.filter((pkg) => getPackageCategory(pkg) === 'international');
 
   return (
-    <div id="packages" className="bg-white py-16 w-full">
+    <div id="packages" className="bg-white py-8 md:py-16 w-full">
       {loading && packages.length === 0 && (
-        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-10 text-center py-10 md:py-20">
           <p className="text-gray-400 animate-pulse text-xl font-medium italic">Curating your next adventure...</p>
         </div>
       )}
@@ -173,15 +173,15 @@ function PackageGrid() {
           )}
 
           {/* India Packages Extension */}
-          <section className="py-16">
-            <div className="max-w-7xl mx-auto px-6 md:px-10">
-              <div className="mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tighter">
+          <section className="py-8 md:py-16">
+            <div className="max-w-7xl mx-auto px-4 md:px-10">
+              <div className="mb-6 md:mb-12">
+                <h2 className="text-2xl md:text-5xl font-bold text-gray-900 tracking-tighter">
                   More to Explore in <span className="text-amber-600 italic">India</span>
                 </h2>
-                <div className="w-16 h-1.5 bg-amber-500 mt-4" />
+                <div className="w-16 h-1.5 bg-amber-500 mt-2 md:mt-4" />
               </div>
-              <div className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-8">
+              <div className="flex gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-8 px-4 md:px-0">
                 {[
                   { title: "Divyadham", nights: 3, days: 4, priceFrom: "₹15,555/-*", imageUrl: brajImg, slug: "divyadham" },
                   { title: "Jagannath Dham", nights: 3, days: 4, priceFrom: "₹14,999/-*", imageUrl: jagannathImg, slug: "jagannath-dham" },
@@ -194,7 +194,7 @@ function PackageGrid() {
                 ].map((pkg, idx) => (
                   <motion.div
                     key={idx}
-                    className="flex-none w-[280px] md:w-[380px]"
+                    className="flex-none w-[75%] max-w-[280px] md:w-[380px]"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}

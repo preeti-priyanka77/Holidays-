@@ -10,7 +10,7 @@ const TESTIMONIALS = [
   {
     rating: "5.0",
     text: "I recently completed a spiritually enriching journey covering Nilamadhab Kantilo, Vaishno Devi Nayagarh, and Ayodhya Ram Mandir (Fategarh), and I must appreciate the outstanding service provided by Eleqt.The entire trip was seamless; right from punctual pickup to safe and comfortable travel across destinations. The driver was professional, courteous, and well-aware of temple routes, ensuring smooth darshan without unnecessary delays.ed for anyone planning pilgrimage tours or long-distance spiritual travel in Odisha and beyond.",
-    name: "Dr. Satya Sundar Brahmachari(Astrologer & Gen AI Founder)"
+    name: "Dr. Satya Sundar Brahmachari (Astrologer & Gen AI Founder)"
   },
   {
     rating: "4.5",
@@ -41,7 +41,7 @@ function Testimonials() {
 
   return (
     <section
-      className="relative py-24 px-6 md:px-10 bg-cover bg-center overflow-hidden"
+      className="relative py-10 md:py-24 px-4 md:px-10 bg-cover bg-center overflow-hidden"
       style={{
         backgroundImage: 'url(https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1920&q=80)'
       }}
@@ -55,12 +55,12 @@ function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-14"
+          className="mb-6 md:mb-14"
         >
           <p className="text-white/70 text-[11px] font-bold uppercase tracking-[0.4em] mb-3">
             CLIENT EXPERIENCES
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4 tracking-tight">
             Real journeys. Real stories.
           </h2>
           <p className="text-white/80 text-lg font-medium"> Discover their journeys with Eleqt</p>
@@ -71,14 +71,14 @@ function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+          className="flex md:grid overflow-x-auto md:overflow-x-visible no-scrollbar gap-4 md:gap-8 mt-6 md:mt-12 scroll-smooth px-4 md:px-0"
         >
           {TESTIMONIALS.map((t, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
               whileHover={{ y: -10 }}
-              className="bg-white p-8 shadow-2xl rounded-none flex flex-col justify-between h-full group transition-all duration-300"
+              className="bg-white p-6 md:p-8 shadow-2xl rounded-none flex flex-col justify-between group transition-all duration-300 flex-shrink-0 w-[85%] md:w-full min-h-[480px] md:min-h-0 h-full"
             >
               <div>
                 <motion.div
