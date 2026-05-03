@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, Instagram, Youtube, Linkedin,Facebook, ArrowRight } from 'lucide-react';
+import { Phone, Mail, Instagram, Youtube, Linkedin, Facebook, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="w-full">
       {/* 🧭 PRE-FOOTER (EXPERIENCE SECTION) */}
-      <section className="relative h-[400px] md:h-[450px] w-full flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[400px] md:h-[450px] py-12 md:py-0 w-full flex flex-col items-center justify-center overflow-hidden">
         {/* Background Layer */}
         <motion.div
           initial={{ scale: 1.1 }}
@@ -26,12 +26,12 @@ function Footer() {
         </motion.div>
 
         {/* Content Layer */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto flex flex-col items-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-xs md:text-sm font-bold tracking-[0.4em] text-white/60 uppercase mb-4"
+            className="text-xs md:text-sm font-bold tracking-[0.4em] text-white/60 uppercase mb-2 md:mb-4"
           >Planning your next getaway?
           </motion.span>
 
@@ -39,18 +39,18 @@ function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-10 leading-tight"
+            className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-10 max-w-md md:max-w-4xl leading-tight"
           >
             Discover curated holiday experiences tailored for you
           </motion.h2>
 
-          <Link to="/#enquiry-form">
+          <Link to="/#enquiry-form" className="w-full md:w-auto flex justify-center">
             <motion.button
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(180,140,80,0.5)" }}
-              className="bg-white text-neutral-900 px-10 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 mb-12 group"
+              className="bg-white text-neutral-900 px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3 transition-all duration-300 w-full md:w-auto max-w-sm md:max-w-none mb-8 md:mb-12 group"
             >
               Start Your Journey
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -58,7 +58,7 @@ function Footer() {
           </Link>
 
           {/* 📞 FLOATING CONTACT CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 w-full max-w-2xl">
             {/* Phone Card */}
             <motion.a
               href="tel:+91 9777906587 "
