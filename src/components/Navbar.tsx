@@ -105,7 +105,7 @@ function Navbar() {
                   {[
                     { name: 'Home', path: '/' },
                     { name: 'About Us', path: '/about' },
-                    { name: 'Packages', path: '/contact' }
+                  
                   ].map((link) => (
                     <Link 
                       key={link.name}
