@@ -167,7 +167,7 @@ export const MOCK_PACKAGES: Record<string, EnhancedPackage> = {
     title: 'Goa',
     nights: 3,
     days: 4,
-    price: '₹19,999/-*',
+    price: '₹17,999/-*',
     location: 'Goa, India',
     rating: 4.8,
     reviews: 210,
