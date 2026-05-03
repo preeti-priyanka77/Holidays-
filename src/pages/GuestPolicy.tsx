@@ -176,7 +176,7 @@ function GuestPolicy() {
                         </div>
 
                         <div className="mt-32 pt-16 border-t border-gray-100">
-                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em]">© 2026 ELEQT HOLIDAYS & LEISURE • ALL RIGHTS RESERVED.</p>
+                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em]">  2026 © ELEQT HOLIDAYS & LEISURE • M/S PSYNUXSOFTWARE PVT LTD</p>
                         </div>
                     </main>
                 </div>

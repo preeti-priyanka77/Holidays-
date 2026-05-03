@@ -238,7 +238,7 @@ function Hero() {
                     onChange={handleInputChange}
                     className="w-full bg-white border border-gray-300 px-5 py-2 text-gray-900 focus:outline-none focus:border-amber-600 rounded-none transition-all appearance-none text-base cursor-pointer"
                   >
-                    <option value="">Destinations</option>
+                    <option value="">Choose Destinations</option>
                     <option value="pilgrimage">Pilgrimage</option>
                     <option value="honeymoon">Honeymoon</option>
                     <option value="adventure">Adventure</option>

@@ -58,7 +58,7 @@ function Brands() {
           </h2>
         </motion.div>
 
-        <div className="flex md:grid md:grid-cols-4 overflow-x-auto md:overflow-x-visible no-scrollbar gap-4 md:gap-6 scroll-smooth px-4 md:px-0">
+        <div className="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-x-visible no-scrollbar gap-4 md:gap-6 scroll-smooth px-4 md:px-0">
           {CURATED_SERVICES.map((service, index) => (
             <motion.div
               key={index}
