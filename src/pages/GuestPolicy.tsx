@@ -86,7 +86,7 @@ function GuestPolicy() {
                         <div className="mt-16 p-8 bg-gray-50 border border-gray-100 rounded-none text-center">
                             <p className="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-3">Questions?</p>
                             <p className="text-xs text-gray-500 font-medium leading-relaxed mb-6">For detailed inquiries regarding hotel protocols or special requests, please contact us.</p>
-                            <Link to="/#enquiry-form">
+                            <Link to="/contact">
                                 <button className="w-full py-3 bg-gray-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-amber-500 transition-colors rounded-none">
                                     Support Concierge
                                 </button>
