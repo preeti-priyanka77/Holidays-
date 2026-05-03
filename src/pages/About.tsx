@@ -36,7 +36,7 @@ function About() {
   });
 
   const heroImageY = useTransform(heroScroll, [0, 1], ["0%", "20%"]);
-  
+
   const { scrollYProgress: stripScroll } = useScroll({
     target: stripRef,
     offset: ["start end", "end start"]
@@ -46,11 +46,11 @@ function About() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-[#b08d57] selection:text-white">
-      
+
       {/* 1. HERO SECTION (Split Layout) */}
       <section ref={heroRef} className="relative h-auto lg:h-[80vh] flex flex-col lg:flex-row overflow-hidden pt-16 lg:pt-0">
         <div className="w-full lg:w-1/2 flex items-center justify-center px-4 md:px-6 lg:px-20 bg-[#fdfcfb] z-10 py-8 lg:py-0">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease }}
@@ -67,9 +67,9 @@ function About() {
         </div>
         <div className="w-full lg:w-1/2 relative overflow-hidden h-[40vh] lg:h-auto">
           <motion.div style={{ y: heroImageY }} className="absolute inset-0 scale-110">
-            <img 
-              src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200" 
-              alt="Luxury Travel" 
+            <img
+              src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1200"
+              alt="Luxury Travel"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -82,7 +82,7 @@ function About() {
       <section className="py-8 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24">
           <div className="w-full md:w-1/2 space-y-8 order-2 md:order-1">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -99,7 +99,7 @@ function About() {
               <div className="h-px w-24 bg-[#b08d57]/30 mt-8" />
             </motion.div>
           </div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -107,9 +107,9 @@ function About() {
             className="w-full md:w-1/2 order-1 md:order-2"
           >
             <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl shadow-neutral-200">
-              <img 
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1000" 
-                alt="Refined Travel" 
+              <img
+                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1000"
+                alt="Refined Travel"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -124,7 +124,7 @@ function About() {
             <span className="text-[#b08d57] font-bold tracking-widest uppercase text-xs mb-4 block">The Experience</span>
             <h2 className="text-3xl md:text-5xl font-serif text-neutral-900">Curated Moments</h2>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {EXPERIENCE_ITEMS.map((item, idx) => (
               <motion.div
@@ -150,16 +150,16 @@ function About() {
       {/* 4. IMMERSIVE STRIP (Parallax) */}
       <section ref={stripRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <motion.div style={{ y: stripImageY }} className="absolute inset-0 scale-125">
-          <img 
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1920" 
-            alt="Immersive Ocean" 
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1920"
+            alt="Immersive Ocean"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-neutral-900/60" />
         </motion.div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -174,7 +174,7 @@ function About() {
       {/* 5. APPROACH (Story Flow - Left Image) */}
       <section className="py-8 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -182,15 +182,15 @@ function About() {
             className="w-full md:w-1/2"
           >
             <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl shadow-neutral-200">
-              <img 
-                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1000" 
-                alt="Precision Approach" 
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1000"
+                alt="Precision Approach"
                 className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
           <div className="w-full md:w-1/2 space-y-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -224,7 +224,7 @@ function About() {
 
           {/* 5.5 STATISTICS SECTION */}
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible pb-8 md:pb-0 scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-4 md:px-0">
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible pb-8 md:pb-0 scrollbar-hide [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-4 md:px-20">
               {STATS.map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -241,9 +241,9 @@ function About() {
               ))}
             </div>
           </div>
-          
+
           <div className="max-w-3xl mx-auto text-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
