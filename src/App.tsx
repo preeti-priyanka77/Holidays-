@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PackageDetail from './pages/PackageDetail';
+import PackageDetailsPage from './pages/PackageDetailsPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import CustomizePackage from './pages/CustomizePackage';
@@ -25,6 +26,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/package/:slug" element={<PackageDetail />} />
+            <Route path="/detailspack" element={<PackageDetailsPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/customize/:slug" element={<CustomizePackage />} />
